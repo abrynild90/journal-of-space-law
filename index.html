@@ -1,0 +1,1196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Journal of Space Law | Discover Space Law Insights Today</title>
+    <!-- Google Scholar / Open Access metadata -->
+    <meta name="citation_journal_title" content="Journal of Space Law">
+    <meta name="citation_publisher" content="University of Mississippi School of Law">
+    <meta name="citation_issn" content="0095-7577">
+    <meta name="DC.title" content="Journal of Space Law">
+    <meta name="DC.publisher" content="University of Mississippi School of Law">
+    <meta name="DC.language" content="en">
+    <meta name="robots" content="index, follow">
+    <meta name="description" content="The Journal of Space Law, published by the University of Mississippi School of Law, covers all aspects of space and aviation law. Browse 47 volumes (1973–2023) of scholarly articles.">
+    <meta property="og:title" content="Journal of Space Law">
+    <meta property="og:description" content="The leading academic journal dedicated to space law, published by the University of Mississippi School of Law since 1973.">
+    <meta property="og:type" content="website">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #1a365d;
+            --secondary: #2c5282;
+            --accent: #c53030;
+            --light: #f7fafc;
+            --dark: #1a202c;
+            --gray: #718096;
+            --border: #e2e8f0;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background: var(--light);
+        }
+        
+        /* Header */
+        header {
+            background: var(--primary);
+            color: white;
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+        
+        nav {
+            display: flex;
+            gap: 2rem;
+        }
+        
+        nav a {
+            color: rgba(255,255,255,0.9);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        
+        nav a:hover {
+            color: white;
+        }
+        
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 6rem 2rem;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+        }
+        
+        .hero p {
+            font-size: 1.25rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            opacity: 0.95;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.875rem 2rem;
+            background: var(--accent);
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(197, 48, 48, 0.4);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid white;
+            margin-left: 1rem;
+        }
+        
+        .btn-outline:hover {
+            background: white;
+            color: var(--primary);
+        }
+        
+        /* Main Content */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+        
+        .section {
+            margin-bottom: 4rem;
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid var(--accent);
+            display: inline-block;
+        }
+        
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .about-text p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .about-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+        
+        .stat-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--accent);
+        }
+        
+        .stat-label {
+            color: var(--gray);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        /* Editors */
+        .editors-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .editor-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        
+        .editor-card h3 {
+            color: var(--primary);
+            margin-bottom: 0.25rem;
+        }
+        
+        .editor-card .role {
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Journal Volumes */
+        .volumes-section {
+            background: white;
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+        }
+        
+        .volumes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .volume-item {
+            padding: 1rem;
+            background: var(--light);
+            border-radius: 6px;
+            transition: background 0.2s;
+        }
+        
+        .volume-item:hover {
+            background: var(--border);
+        }
+        
+        .volume-item a {
+            color: var(--secondary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .volume-item a:hover {
+            color: var(--accent);
+        }
+        
+        /* Contact */
+        .contact-form {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            max-width: 600px;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--dark);
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            font-size: 1rem;
+            font-family: inherit;
+        }
+        
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--secondary);
+            box-shadow: 0 0 0 3px rgba(44, 82, 130, 0.1);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+        
+        footer p {
+            opacity: 0.8;
+            margin-bottom: 0.5rem;
+        }
+        
+        footer a {
+            color: white;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            nav {
+                display: none;
+            }
+            
+            .btn-outline {
+                display: block;
+                margin: 1rem 0 0 0;
+            }
+        }
+        
+        /* Page Navigation */
+        .page-nav {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .page-link {
+            padding: 0.5rem 1rem;
+            background: white;
+            color: var(--secondary);
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 500;
+        }
+        
+        .page-link.active {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .page-content {
+            display: none;
+        }
+        
+        .page-content.active {
+            display: block;
+        }
+
+        /* Full Archive Styles */
+        .archive-full {
+            max-width: 900px;
+        }
+        .vol-block {
+            margin-bottom: 2.5rem;
+            border-left: 3px solid var(--accent);
+            padding-left: 1.2rem;
+        }
+        .vol-heading {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            margin-bottom: 0.75rem;
+        }
+        .vol-year {
+            font-weight: 400;
+            color: var(--gray);
+        }
+        .vol-count {
+            font-weight: 400;
+            font-size: 0.8rem;
+            color: var(--gray);
+            margin-left: 0.5rem;
+            text-transform: none;
+            letter-spacing: 0;
+        }
+        .art-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .art-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.3rem 1rem;
+            align-items: baseline;
+        }
+        .art-list li:last-child { border-bottom: none; }
+        .art-title {
+            font-style: italic;
+            color: var(--primary);
+            flex: 1 1 300px;
+        }
+        .art-author {
+            color: var(--gray);
+            font-size: 0.88rem;
+        }
+        .art-pages {
+            color: #a0aec0;
+            font-size: 0.82rem;
+            white-space: nowrap;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">⚖️ Journal of Space Law</div>
+            <nav>
+                <a href="#" onclick="showPage('home')">Home</a>
+                <a href="#" onclick="showPage('about')">About</a>
+                <a href="#" onclick="showPage('journal')">Journal</a>
+                <a href="https://olemiss.edu/airandspacelaw/" target="_blank">Center</a>
+                <a href="#" onclick="showPage('contact')">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Home Page -->
+    <div id="home" class="page-content active">
+        <section class="hero">
+            <h1>Journal of Space Law</h1>
+            <p>The oldest publication dedicated to legal issues in outer space. Published by the University of Mississippi's Center for Air and Space Law, covering international treaties, commercial space activities, and emerging legal challenges in space exploration.</p>
+            <a href="#" onclick="showPage('journal')" class="btn">Browse Journal Issues</a>
+            <a href="#" onclick="showPage('about')" class="btn btn-outline">Learn More</a>
+        </section>
+
+        <main>
+            <section class="section">
+                <div class="about-content">
+                    <div class="about-text">
+                        <h2 class="section-title">Cutting-Edge Legal Research on Outer Space Since 1973</h2>
+                        <p>The Center for Air and Space Law and the University of Mississippi School of Law have been at the forefront of space law since the 1970s.</p>
+                        <p>We're proud to publish the Journal of Space Law, our Center's flagship publication and a world-renowned journal on outer space.</p>
+                        <p>Founded by Professor Stephen Gorove, our Journal has featured articles from pioneers in space law including: Eilene Galloway, Myres McDougal, Bin Cheng, Francis Lyall, and countless others.</p>
+                        <p>Today, under the leadership of the Center's Executive Director and Professor Michelle Hanlon, we continue to provide cutting-edge research on space law for the international community.</p>
+                    </div>
+                    <div class="about-stats">
+                        <div class="stat-card">
+                            <div class="stat-number">50+</div>
+                            <div class="stat-label">Years of Publication</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">47</div>
+                            <div class="stat-label">Volumes Published</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">1973</div>
+                            <div class="stat-label">Founded</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">#1</div>
+                            <div class="stat-label">Oldest Space Law Journal</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- About Page -->
+    <div id="about" class="page-content">
+        <main>
+            <section class="section">
+                <h2 class="section-title">About the Journal</h2>
+                <div class="about-text">
+                    <p>The Center for Air and Space Law and the University of Mississippi School of Law have been at the forefront of space law since the 1970s. We're proud to publish the Journal of Space Law, our Center's flagship publication and a world-renowned journal on outer space.</p>
+                    <p>Founded by Professor Stephen Gorove, our Journal has featured articles from pioneers in space law including: Eilene Galloway, Myres McDougal, Bin Cheng, Francis Lyall, and countless others.</p>
+                    <p>Today, under the leadership of the Center's Executive Director and Professor Michelle Hanlon, we continue to provide cutting-edge research on space law for the international community.</p>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Journal Editors</h2>
+                <div class="editors-grid">
+                    <div class="editor-card">
+                        <h3>Michelle Hanlon</h3>
+                        <div class="role">Editor-in-Chief</div>
+                    </div>
+                    <div class="editor-card">
+                        <h3>Allison Lewis</h3>
+                        <div class="role">Executive Editor</div>
+                    </div>
+                    <div class="editor-card">
+                        <h3>Leighton Shearer</h3>
+                        <div class="role">Executive Editor</div>
+                    </div>
+                    <div class="editor-card">
+                        <h3>Aaron Brynildson</h3>
+                        <div class="role">Executive Editor</div>
+                    </div>
+                    <div class="editor-card">
+                        <h3>Tate Few</h3>
+                        <div class="role">Managing Editor</div>
+                    </div>
+                    <div class="editor-card">
+                        <h3>Joshua Osborne</h3>
+                        <div class="role">Managing Editor</div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Journal Page -->
+    <div id="journal" class="page-content">
+        <main>
+            <section class="section">
+                <h2 class="section-title">Journal Archive</h2>
+                <p style="margin-bottom:2rem;">Explore 47 volumes of space law scholarship, dating back to Volume 1 in 1973. Published by the University of Mississippi School of Law.</p>
+
+                                <div style="margin-bottom:1.5rem;">
+                  <input id="archive-search" type="text" placeholder="Search articles, authors..." style="width:100%;max-width:500px;padding:0.6rem 1rem;border:1px solid var(--border);border-radius:4px;font-size:0.95rem;color:var(--dark);background:white;">
+                </div>
+<div class="archive-full">
+                  <div class="vol-block" id="v47">
+                    <h3 class="vol-heading">Volume 47 <span class="vol-year">(2023)</span><span class="vol-count">12 articles</span></h3>
+                    <ul class="art-list">
+                      <li><span class="art-title">On Increasing Commercial Space Operations</span><span class="art-author">Nilgun Ozgur, Steven Truxal</span><span class="art-pages">p.&nbsp;1-35</span></li>
+                      <li><span class="art-title">Directed Energy Weapons</span><span class="art-author">Andy Moore</span><span class="art-pages">p.&nbsp;36-66</span></li>
+                      <li><span class="art-title">Legal Issues for Lunar Orbiting Satellites</span><span class="art-author">Francesca Giannoni-Crystal</span><span class="art-pages">p.&nbsp;67-118</span></li>
+                      <li><span class="art-title">Lost (It All) in Space</span><span class="art-author">Robert M. Jarvis</span><span class="art-pages">p.&nbsp;119-131</span></li>
+                      <li><span class="art-title">The Plight of Valinor</span><span class="art-author">Marshall McKellar</span><span class="art-pages">p.&nbsp;132-304</span></li>
+                      <li><span class="art-title">Protecting the Cosmos</span><span class="art-author">David A. Epstein</span><span class="art-pages">p.&nbsp;305-345</span></li>
+                      <li><span class="art-title">Is the Speed of Law Faster than the Speed of Light</span><span class="art-author">Alex Simmonds</span><span class="art-pages">p.&nbsp;346-387</span></li>
+                      <li><span class="art-title">Back to the Future of Biopower</span><span class="art-author">Gbenga Oduntan</span><span class="art-pages">p.&nbsp;388-433</span></li>
+                      <li><span class="art-title">Addressing the US Domain Awareness Gap</span><span class="art-author">Quinn McKemey</span><span class="art-pages">p.&nbsp;434-464</span></li>
+                      <li><span class="art-title">Uncontrolled Reentry</span><span class="art-author">Jessica Sewell</span><span class="art-pages">p.&nbsp;465-504</span></li>
+                      <li><span class="art-title">The Space-Defense Relationship</span><span class="art-author">Giulia Pascuzzi</span><span class="art-pages">p.&nbsp;505-549</span></li>
+                      <li><span class="art-title">Protecting Intellectual Property</span><span class="art-author">Clark W. Lackert, Caleb Dorris</span><span class="art-pages">p.&nbsp;550-612</span></li>
+                    </ul>
+                  </div>
+                  <div class="vol-block" id="v46">
+                    <h3 class="vol-heading">Volume 46 <span class="vol-year">(2022)</span><span class="vol-count">12 articles</span></h3>
+                    <ul class="art-list">
+                      <li><span class="art-title">Principles of General International Law</span><span class="art-author">Sena, Tyler J.</span><span class="art-pages">p.&nbsp;1</span></li>
+                      <li><span class="art-title">The Odyssey of European Space Policy</span><span class="art-author">Castillo, Maria</span><span class="art-pages">p.&nbsp;134</span></li>
+                      <li><span class="art-title">Five Years: An Evaluation of Legal Issues</span><span class="art-author">Dasgupta, Upasana</span><span class="art-pages">p.&nbsp;158</span></li>
+                      <li><span class="art-title">International Space Law</span><span class="art-author">Keskin, Berfin Bediz Yildiz</span><span class="art-pages">p.&nbsp;180</span></li>
+                      <li><span class="art-title">Century New Space Student Article</span><span class="art-author">Wang, Hongxi</span><span class="art-pages">p.&nbsp;221</span></li>
+                      <li><span class="art-title">Foresaw New Thinking in International Space Law</span><span class="art-author">Mac Garry, Laura Jamschon, Freeland, Steven</span><span class="art-pages">p.&nbsp;260</span></li>
+                      <li><span class="art-title">International Law and Space Weaponization</span><span class="art-author">Connolly, Rebecca, Bennett, Aine</span><span class="art-pages">p.&nbsp;294</span></li>
+                      <li><span class="art-title">Space Arbitration and Harmful Interference Disputes</span><span class="art-author">Zielinski, Laura Yvonne</span><span class="art-pages">p.&nbsp;327</span></li>
+                      <li><span class="art-title">Satellite Data and Imagery as Evidence</span><span class="art-author">Rychlak, Ronald J., Taylor, Sean Patrick</span><span class="art-pages">p.&nbsp;351</span></li>
+                      <li><span class="art-title">A New Gold Mining Rush?</span><span class="art-author">Vakaki, Aikaterini</span><span class="art-pages">p.&nbsp;421</span></li>
+                      <li><span class="art-title">International Law of the Moon</span><span class="art-author">Sreejith, S. G.</span><span class="art-pages">p.&nbsp;43</span></li>
+                      <li><span class="art-title">Avoiding Conflict in Asteroid Resource Extraction</span><span class="art-author">Radisic, Gregory, Haffey, Connor</span><span class="art-pages">p.&nbsp;464</span></li>
+                    </ul>
+                  </div>
+                  <div class="vol-block" id="v45">
+                    <h3 class="vol-heading">Volume 45 <span class="vol-year">(2021)</span><span class="vol-count">12 articles</span></h3>
+                    <ul class="art-list">
+                      <li><span class="art-title">Cultural Heritage</span><span class="art-author">Lixinski, Lucas, Losier, M. M., Schreiber, Hanna</span><span class="art-pages">p.&nbsp;1</span></li>
+                      <li><span class="art-title">Terrestrial Life Forms</span><span class="art-author">Amos, Rob</span><span class="art-pages">p.&nbsp;111</span></li>
+                      <li><span class="art-title">Observation Data</span><span class="art-author">Borghi, Marco</span><span class="art-pages">p.&nbsp;142</span></li>
+                      <li><span class="art-title">Liability Framework for Lunar and Cislunar Activities</span><span class="art-author">Morozova, Elina, Laurenava, Alena</span><span class="art-pages">p.&nbsp;176</span></li>
+                      <li><span class="art-title">Communications Satellites</span><span class="art-author">Wolff, Joshua J.</span><span class="art-pages">p.&nbsp;239</span></li>
+                      <li><span class="art-title">Human Missions to Mars</span><span class="art-author">de Zwart, Melissa, Henderson, Stacey, Neef, Rachel</span><span class="art-pages">p.&nbsp;276</span></li>
+                      <li><span class="art-title">Legislation in Central Asia in 2021</span><span class="art-author">Packard, Christian A.</span><span class="art-pages">p.&nbsp;319</span></li>
+                      <li><span class="art-title">Coordinate GNSS-EO-Telecommunication Systems</span><span class="art-author">Fino, Ivan</span><span class="art-pages">p.&nbsp;354</span></li>
+                      <li><span class="art-title">Lunar Activities</span><span class="art-author">Raju, Nivedita, Vertadier, Heloise</span><span class="art-pages">p.&nbsp;383</span></li>
+                      <li><span class="art-title">International Law Student Articles</span><span class="art-author">Fois, Andrew</span><span class="art-pages">p.&nbsp;406</span></li>
+                      <li><span class="art-title">Active Debris Removal Efforts Student Articles</span><span class="art-author">Hunter, Denton, McKemey, Quinn</span><span class="art-pages">p.&nbsp;437</span></li>
+                      <li><span class="art-title">International Law</span><span class="art-author">Long, Jie, Xie, Wu</span><span class="art-pages">p.&nbsp;46</span></li>
+                    </ul>
+                  </div>
+                  <div class="vol-block" id="v44">
+                    <h3 class="vol-heading">Volume 44 <span class="vol-year">(2020)</span><span class="vol-count">17 articles</span></h3>
+                    <ul class="art-list">
+                      <li><span class="art-title">International Space Law at the Dawn of Space Mining</span><span class="art-author">Xu, Fengna, Su, Jinyuan, Mehdi, Miqdad</span><span class="art-pages">p.&nbsp;1</span></li>
+                      <li><span class="art-title">and the First Amendment</span><span class="art-author">McKellar, Marshall</span><span class="art-pages">p.&nbsp;146</span></li>
+                      <li><span class="art-title">Unauthorized Satellites Student Articles</span><span class="art-author">Cheema, Manal</span><span class="art-pages">p.&nbsp;171</span></li>
+                      <li><span class="art-title">Protect the Space Environment Student Articles</span><span class="art-author">Flenniken, Sara Raye</span><span class="art-pages">p.&nbsp;250</span></li>
+                      <li><span class="art-title">United States Export Controls Student Articles</span><span class="art-author">Ellzey, Charles H.</span><span class="art-pages">p.&nbsp;278</span></li>
+                      <li><span class="art-title">of War in Space Reviews</span><span class="art-author">Grunert, Jeremy</span><span class="art-pages">p.&nbsp;332</span></li>
+                      <li><span class="art-title">An Introduction to Space Law Reviews</span><span class="art-author">Hanlon, Michelle L. D.</span><span class="art-pages">p.&nbsp;340</span></li>
+                      <li><span class="art-title">the Context of the 1960s Reviews</span><span class="art-author">Taylor, Sean Patrick</span><span class="art-pages">p.&nbsp;345</span></li>
+                      <li><span class="art-title">for National Activities in Outer Space</span><span class="art-author">Abhijeet, Kumar</span><span class="art-pages">p.&nbsp;352</span></li>
+                      <li><span class="art-title">Regulation of Space Activities</span><span class="art-author">Freeland, Steven, Zhao, Yun</span><span class="art-pages">p.&nbsp;405</span></li>
+                      <li><span class="art-title">From "Soft Regulation" to "Hard" Treaty Mechanisms?</span><span class="art-author">Kapustin, Anatoly</span><span class="art-pages">p.&nbsp;433</span></li>
+                      <li><span class="art-title">Star Laws: Criminal Jurisdiction in Outer Space</span><span class="art-author">Ireland-Piper, Danielle, Freeland, Steven</span><span class="art-pages">p.&nbsp;44</span></li>
+                      <li><span class="art-title">Space Traffic Management - The Bin Cheng Model</span><span class="art-author">Larsen, Paul B.</span><span class="art-pages">p.&nbsp;483</span></li>
+                      <li><span class="art-title">and Security of Space Activities</span><span class="art-author">Martinez, Peter</span><span class="art-pages">p.&nbsp;522</span></li>
+                      <li><span class="art-title">and Regulatory Perspective</span><span class="art-author">Tronchetti, Fabio</span><span class="art-pages">p.&nbsp;565</span></li>
+                      <li><span class="art-title">Artemis: The Discordant Accords Commentary</span><span class="art-author">Mosteshar, Sa'id</span><span class="art-pages">p.&nbsp;591</span></li>
+                      <li><span class="art-title">in the Roscosmos Era</span><span class="art-author">Packard, Christian A.</span><span class="art-pages">p.&nbsp;76</span></li>
+                    </ul>
+                  </div>
+                  <div class="vol-block" id="v43">
+                    <h3 class="vol-heading">Volume 43 <span class="vol-year">(2019)</span><span class="vol-count">16 articles</span></h3>
+                    <ul class="art-list">
+                      <li><span class="art-title">of the Province of All Mankind</span><span class="art-author">Simon-Butler, Andrew James</span><span class="art-pages">p.&nbsp;1</span></li>
+                      <li><span class="art-title">Sensing Space Systems Act</span><span class="art-author">Jakhu, Ram S., Kerkonian, Aram Daniel</span><span class="art-pages">p.&nbsp;1</span></li>
+                      <li><span class="art-title">Space Resource Activities</span><span class="art-author">Cheney, Thomas</span><span class="art-pages">p.&nbsp;106</span></li>
+                      <li><span class="art-title">Model of International Cooperation</span><span class="art-author">Tepper, Eytan</span><span class="art-pages">p.&nbsp;112</span></li>
+                      <li><span class="art-title">and Nuclear Waste Recycling</span><span class="art-author">Pittman, Cameron</span><span class="art-pages">p.&nbsp;135</span></li>
+                      <li><span class="art-title">Space Law: A Treatise Book Review</span><span class="art-author">Harrington, Andrea J.</span><span class="art-pages">p.&nbsp;171</span></li>
+                      <li><span class="art-title">Artemis Book Review</span><span class="art-author">Robison, Christian J.</span><span class="art-pages">p.&nbsp;191</span></li>
+                      <li><span class="art-title">Servicing Missions and Proximity Operations</span><span class="art-author">Martin, Anne-Sophie, Freeland, Steven</span><span class="art-pages">p.&nbsp;196</span></li>
+                      <li><span class="art-title">Adequacy of the Current Law of Armed Conflict</span><span class="art-author">Fernandez, Gemmo Bautista</span><span class="art-pages">p.&nbsp;245</span></li>
+                      <li><span class="art-title">Adverse Inferences</span><span class="art-author">Pislevik, Stefan</span><span class="art-pages">p.&nbsp;280</span></li>
+                      <li><span class="art-title">Disputes among Nations in Space Student Article</span><span class="art-author">Ohmer, Caleb</span><span class="art-pages">p.&nbsp;344</span></li>
+                      <li><span class="art-title">Lawyers and Engineers Book Reviews</span><span class="art-author">Porras, Daniel A.</span><span class="art-pages">p.&nbsp;376</span></li>
+                      <li><span class="art-title">Astrophysics and the Military Book Reviews</span><span class="art-author">Grunert, Jeremy J.</span><span class="art-pages">p.&nbsp;379</span></li>
+                      <li><span class="art-title">International Law</span><span class="art-author">Salmeri, Antonino</span><span class="art-pages">p.&nbsp;60</span></li>
+                      <li><span class="art-title">Evolution of the National Security Search Exception</span><span class="art-author">Robison, Christian J.</span><span class="art-pages">p.&nbsp;77</span></li>
+                      <li><span class="art-title">of Space Mining Activities</span><span class="art-author">Martin, Anne-Sophie</span><span class="art-pages">p.&nbsp;85</span></li>
+                    </ul>
+                  </div>
+                  <div class="vol-block" id="v42">
+                    <h3 class="vol-heading">Volume 42 <span class="vol-year">(2018)</span><span class="vol-count">4 articles</span></h3>
+                    <ul class="art-list">
+                      <li><span class="art-title">Second Independent Review of Canada's Remote Sensing Act</span><span class="art-author">Ram S. Jakhu, Aram Kerkonian</span><span class="art-pages">p.&nbsp;1-37</span></li>
+                      <li><span class="art-title">Here a Spaceport</span><span class="art-author">Michelle L. D. Hanlon</span><span class="art-pages">p.&nbsp;38-76</span></li>
+                      <li><span class="art-title">The Times We Live In</span><span class="art-author">Christian J. Robison</span><span class="art-pages">p.&nbsp;77-111</span></li>
+                      <li><span class="art-title">Israel-Florida Space Cooperation</span><span class="art-author">Eytan Tepper</span><span class="art-pages">p.&nbsp;112-134</span></li>
+                    </ul>
+                  </div>
+                  <div class="vol-block" id="v41">
+                    <h3 class="vol-heading">Volume 41 <span class="vol-year">(2017)</span><span class="vol-count">31 articles</span></h3>
+                    <ul class="art-list">
+                      <li><span class="art-title">Nation Space Legislation</span><span class="art-author">Bhat B., Sandeepa, Kurlekar, Arthad</span><span class="art-pages">p.&nbsp;1</span></li>
+                      <li><span class="art-title">Light of the US Space Resource Act of 2015</span><span class="art-author">De Man, Philip</span><span class="art-pages">p.&nbsp;1</span></li>
+                      <li><span class="art-title">Regulating the Void: In-Orbit Collisions and Space Debris</span><span class="art-author">Nelson, Timothy G.</span><span class="art-pages">p.&nbsp;105</span></li>
+                      <li><span class="art-title">Way Colonisation of Outer Space Commentary</span><span class="art-author">Jessen, Dorte</span><span class="art-pages">p.&nbsp;117</span></li>
+                      <li><span class="art-title">Reflections on Space Law and Government</span><span class="art-author">Potts, William J. Jr.</span><span class="art-pages">p.&nbsp;121</span></li>
+                      <li><span class="art-title">Brave New Worlds of Hosted Payloads</span><span class="art-author">Rendleman, James D.</span><span class="art-pages">p.&nbsp;129</span></li>
+                      <li><span class="art-title">Price on Space Hazards</span><span class="art-author">Pecujlic, Anja Nakarada, Germann, Sarah Katharina</span><span class="art-pages">p.&nbsp;131</span></li>
+                      <li><span class="art-title">Grantham, Haley; Celeski, Nathaniel;</span><span class="art-author">McKellar, Marshall D.</span><span class="art-pages">p.&nbsp;133</span></li>
+                      <li><span class="art-title">Approach and the Problem It Is Facing</span><span class="art-author">von der Dunk, Frans G.</span><span class="art-pages">p.&nbsp;147</span></li>
+                      <li><span class="art-title">The Non Karman Line: An Urban Legend of the Space</span><span class="art-author">Gangale, Thomas</span><span class="art-pages">p.&nbsp;151</span></li>
+                      <li><span class="art-title">and Mitigation Waivers</span><span class="art-author">Garber, Stephen J.</span><span class="art-pages">p.&nbsp;179</span></li>
+                      <li><span class="art-title">The Legality of Mining Celestial Bodies Commentaries</span><span class="art-author">Gangale, Thomas</span><span class="art-pages">p.&nbsp;187</span></li>
+                      <li><span class="art-title">as an International Environmental Nuisance</span><span class="art-author">Kellman, Barry</span><span class="art-pages">p.&nbsp;227</span></li>
+                      <li><span class="art-title">Space Law and Government</span><span class="art-author">Dunstan, James E.</span><span class="art-pages">p.&nbsp;23</span></li>
+                      <li><span class="art-title">Hofmann, Mahulena; Loukakis, Andreas;</span><span class="art-author">Spassova, Simona</span><span class="art-pages">p.&nbsp;233</span></li>
+                      <li><span class="art-title">Resource Exploitation Book Reviews</span><span class="art-author">Robison, Christian J.</span><span class="art-pages">p.&nbsp;249</span></li>
+                      <li><span class="art-title">Telegraph Convention Translation</span><span class="art-author">Parker, Harrison</span><span class="art-pages">p.&nbsp;251</span></li>
+                      <li><span class="art-title">Space Law Bibliography</span><span class="art-author">Blount, P. J.</span><span class="art-pages">p.&nbsp;253</span></li>
+                      <li><span class="art-title">Asteroid Legal Regime: Time for a Change</span><span class="art-author">Larsen, Paul B.</span><span class="art-pages">p.&nbsp;275</span></li>
+                      <li><span class="art-title">Insurance for Commercial Space</span><span class="art-author">Harrington, Andrea J.</span><span class="art-pages">p.&nbsp;29</span></li>
+                      <li><span class="art-title">EAR (Export Administration Regulations)</span><span class="art-author">Straub, Jeremy, Vacek, Joseph J.</span><span class="art-pages">p.&nbsp;351</span></li>
+                      <li><span class="art-title">Contemporary Perspectives</span><span class="art-author">Vasilogeorgi, Isavella Maria</span><span class="art-pages">p.&nbsp;379</span></li>
+                      <li><span class="art-title">Pasture Student Note</span><span class="art-author">Lyons, George T. III</span><span class="art-pages">p.&nbsp;453</span></li>
+                      <li><span class="art-title">Aviation and Space Law Bibliography</span><span class="art-author">Blount, P.J.</span><span class="art-pages">p.&nbsp;481</span></li>
+                      <li><span class="art-title">Institutional Cost of International Space Law</span><span class="art-author">Sreejith, S. G., Goyal, Yugank</span><span class="art-pages">p.&nbsp;57</span></li>
+                      <li><span class="art-title">Economic Sustainability in Space Launching</span><span class="art-author">Fisch, Justin</span><span class="art-pages">p.&nbsp;57</span></li>
+                      <li><span class="art-title">International Legal Regulation of Outer Space</span><span class="art-author">Freeland, Steven</span><span class="art-pages">p.&nbsp;77</span></li>
+                      <li><span class="art-title">Asteroid Mining and Its Legal Implications</span><span class="art-author">Ganatra, Devanshu, Modi, Neil</span><span class="art-pages">p.&nbsp;81</span></li>
+                      <li><span class="art-title">2015 on Planetary Defense</span><span class="art-author">McKellar, Marshall D.</span><span class="art-pages">p.&nbsp;93</span></li>
+                      <li><span class="art-title">Lessons Learned Applicable to the Law of Outer Space</span><span class="art-author">Noble, Ryan T.</span><span class="art-pages">p.&nbsp;99</span></li>
+                      <li><span class="art-title">Editorial Announcement</span><span class="art-author">Gabrynowicz, Joanne Irene</span><span class="art-pages">p.&nbsp;vi</span></li>
+                    </ul>
+                  </div>
+                  <div class="vol-block" id="v40">
+                    <h3 class="vol-heading">Volume 40 <span class="vol-year">(2015)</span><span class="vol-count">8 articles</span></h3>
+                    <ul class="art-list">
+                      <li><span class="art-title">Exploitation of Asteroids</span><span class="art-author">Philip De Man</span><span class="art-pages">p.&nbsp;1-56</span></li>
+                      <li><span class="art-title">Green for Liftoff</span><span class="art-author">Justin Fisch</span><span class="art-pages">p.&nbsp;57-80</span></li>
+                      <li><span class="art-title">Asteroid Mining</span><span class="art-author">Devanshu Ganatra, Neil Modi</span><span class="art-pages">p.&nbsp;81-104</span></li>
+                      <li><span class="art-title">Regulating the Void</span><span class="art-author">Timothy G. Nelson</span><span class="art-pages">p.&nbsp;105-130</span></li>
+                      <li><span class="art-title">Global Cap and Trade</span><span class="art-author">Anja Pecujlic, Sarah Germann</span><span class="art-pages">p.&nbsp;131-146</span></li>
+                      <li><span class="art-title">Effective Exercise of Jurisdiction</span><span class="art-author">Frans G. von der Dunk</span><span class="art-pages">p.&nbsp;147-186</span></li>
+                      <li><span class="art-title">Legality of Mining</span><span class="art-author">Thomas Gangale</span><span class="art-pages">p.&nbsp;187-214</span></li>
+                      <li><span class="art-title">New Space Activities</span><span class="art-author">Susan J. Trepczynski</span><span class="art-pages">p.&nbsp;215-232</span></li>
+                    </ul>
+                  </div>
+                  <div class="vol-block" id="v39">
+                    <h3 class="vol-heading">Volume 39 <span class="vol-year">(2013)</span><span class="vol-count">12 articles</span></h3>
+                    <ul class="art-list">
+                      <li><span class="art-title">Space Law and Government</span><span class="art-author">Stephen E. Doyle</span><span class="art-pages">p.&nbsp;1-22</span></li>
+                      <li><span class="art-title">Space Trash</span><span class="art-author">James E. Dunstan</span><span class="art-pages">p.&nbsp;23-76</span></li>
+                      <li><span class="art-title">A Natural System of Law</span><span class="art-author">Steven Freeland</span><span class="art-pages">p.&nbsp;77-98</span></li>
+                      <li><span class="art-title">Archived Documents</span><span class="art-author">Ryan T. Noble</span><span class="art-pages">p.&nbsp;99-120</span></li>
+                      <li><span class="art-title">Reflections on Space Law</span><span class="art-author">William J. Potts Jr.</span><span class="art-pages">p.&nbsp;121-128</span></li>
+                      <li><span class="art-title">Brave New Worlds</span><span class="art-author">James D. Rendleman</span><span class="art-pages">p.&nbsp;129-180</span></li>
+                      <li><span class="art-title">Biochemical Foundations</span><span class="art-author">George S. Robinson</span><span class="art-pages">p.&nbsp;181-216</span></li>
+                      <li><span class="art-title">Aeroassisted Maneuvers</span><span class="art-author">Robert A. Bettinger</span><span class="art-pages">p.&nbsp;217-226</span></li>
+                      <li><span class="art-title">Space: The Fouled Frontier</span><span class="art-author">Barry Kellman</span><span class="art-pages">p.&nbsp;227-274</span></li>
+                      <li><span class="art-title">Asteroid Legal Regime</span><span class="art-author">Paul B. Larsen</span><span class="art-pages">p.&nbsp;275-326</span></li>
+                      <li><span class="art-title">Apples and Oranges</span><span class="art-author">Louis Francis Rosa</span><span class="art-pages">p.&nbsp;327-350</span></li>
+                      <li><span class="art-title">Military Uses of Outer Space</span><span class="art-author">Isavella Vasilogeorgi</span><span class="art-pages">p.&nbsp;379-452</span></li>
+                    </ul>
+                  </div>
+                  <div class="vol-block" id="v38">
+                    <h3 class="vol-heading">Volume 38 <span class="vol-year">(2012)</span><span class="vol-count">6 articles</span></h3>
+                    <ul class="art-list">
+                      <li><span class="art-title">Benefits on the Occasion of Its Fifteenth Anniversary</span><span class="art-author">Carpanelli, Elena, Cohen, Brendan</span><span class="art-pages">p.&nbsp;1</span></li>
+                      <li><span class="art-title">The Mexican Space Agency Decree and Rules</span><span class="art-author">Villalobos, J. H. Castro</span><span class="art-pages">p.&nbsp;151</span></li>
+                      <li><span class="art-title">Activities Decree and Rules</span><span class="art-author">Pocar, Fausto</span><span class="art-pages">p.&nbsp;171</span></li>
+                      <li><span class="art-title">The GPS-Galileo Agreement and Treaty Law</span><span class="art-author">Dodge, Michael</span><span class="art-pages">p.&nbsp;227</span></li>
+                      <li><span class="art-title">National Space Legislation</span><span class="art-author">Marboe, Irmgard, Traunmuller, Karin</span><span class="art-pages">p.&nbsp;289</span></li>
+                      <li><span class="art-title">What's the Use of Orbital Slots</span><span class="art-author">De Man, Philip</span><span class="art-pages">p.&nbsp;39</span></li>
+                    </ul>
+                  </div>
+                  <div class="vol-block" id="v37">
+                    <h3 class="vol-heading">Volume 37 <span class="vol-year">(2011)</span><span class="vol-count">4 articles</span></h3>
+                    <ul class="art-list">
+                      <li><span class="art-title">Title 51: National and Commercial Space Programs</span><span class="art-author">Sukol, Rob</span><span class="art-pages">p.&nbsp;1</span></li>
+                      <li><span class="art-title">Programs: A Codification Bibliography</span><span class="art-author">Blount, P. J.</span><span class="art-pages">p.&nbsp;277</span></li>
+                      <li><span class="art-title">(DOHSA) to Commercial Space Flight Accidents</span><span class="art-author">Kuhns, Jeffrey Robert</span><span class="art-pages">p.&nbsp;279</span></li>
+                      <li><span class="art-title">and International Law</span><span class="art-author">Langston, Sara M.</span><span class="art-pages">p.&nbsp;299</span></li>
+                    </ul>
+                  </div>
+                  <div class="vol-block" id="v36">
+                    <h3 class="vol-heading">Volume 36 <span class="vol-year">(2010)</span><span class="vol-count">16 articles</span></h3>
+                    <ul class="art-list">
+                      <li><span class="art-title">of the Patent Regime</span><span class="art-author">Bhat B., Sandeepa</span><span class="art-pages">p.&nbsp;1</span></li>
+                      <li><span class="art-title">on Remote Sensing in Criminal Law</span><span class="art-author">Gunasekara, Surya Gablin</span><span class="art-pages">p.&nbsp;115</span></li>
+                      <li><span class="art-title">Paradigm for Air Law and Space Law: Orbit Law</span><span class="art-author">Halstead, C. Brandon</span><span class="art-pages">p.&nbsp;143</span></li>
+                      <li><span class="art-title">Earth Orbit: Present and Future</span><span class="art-author">Kuan, Shang</span><span class="art-pages">p.&nbsp;207</span></li>
+                      <li><span class="art-title">Sensing Activities</span><span class="art-author">Aoki, Setsuko</span><span class="art-pages">p.&nbsp;335</span></li>
+                      <li><span class="art-title">Sensing and Environmental Monitoring</span><span class="art-author">Vazquez, Fermin Romero, Lara, Sergio Camacho</span><span class="art-pages">p.&nbsp;365</span></li>
+                      <li><span class="art-title">Space Policy and Some Possible Legal Implications</span><span class="art-author">Freeland, Steven</span><span class="art-pages">p.&nbsp;381</span></li>
+                      <li><span class="art-title">Remote Sensing Issues as They Relate to Korea</span><span class="art-author">Lee, Jae Gon</span><span class="art-pages">p.&nbsp;415</span></li>
+                      <li><span class="art-title">Urban Planning in China</span><span class="art-author">Ling, Yan</span><span class="art-pages">p.&nbsp;435</span></li>
+                      <li><span class="art-title">of EU Initiatives</span><span class="art-author">Park, Won-hwa</span><span class="art-pages">p.&nbsp;459</span></li>
+                      <li><span class="art-title">Celestial Bodies</span><span class="art-author">Tronchetti, Fabio</span><span class="art-pages">p.&nbsp;489</span></li>
+                      <li><span class="art-title">Law in Hawai'i and Elsewhere</span><span class="art-author">Van Dyke, Jon M.</span><span class="art-pages">p.&nbsp;525</span></li>
+                      <li><span class="art-title">Contractual Road</span><span class="art-author">Dirkx, Marielle Elisabet</span><span class="art-pages">p.&nbsp;55</span></li>
+                      <li><span class="art-title">among the Pacific Rim Commentaries</span><span class="art-author">Kuriyama, Ikuko</span><span class="art-pages">p.&nbsp;567</span></li>
+                      <li><span class="art-title">Hawaii, USA - June 16-18, 2010 Commentaries</span><span class="art-author">Onoda, Masami</span><span class="art-pages">p.&nbsp;579</span></li>
+                      <li><span class="art-title">between Earth and Space</span><span class="art-author">Goodman, Theodore W.</span><span class="art-pages">p.&nbsp;87</span></li>
+                    </ul>
+                  </div>
+                  <div class="vol-block" id="v35">
+                    <h3 class="vol-heading">Volume 35 <span class="vol-year">(2009)</span><span class="vol-count">11 articles</span></h3>
+                    <ul class="art-list">
+                      <li><span class="art-title">Sensing Air, and Space Law: An Introduction</span><span class="art-author">Dodge, Michael S.</span><span class="art-pages">p.&nbsp;1</span></li>
+                      <li><span class="art-title">Uhlir, Paul F.; Chen, Robert S.;</span><span class="art-author">Gabrynowicz, Joanne Irene, Janssen, Katleen</span><span class="art-pages">p.&nbsp;201</span></li>
+                      <li><span class="art-title">and Experience in India Comment</span><span class="art-author">Bhatt, Saligram</span><span class="art-pages">p.&nbsp;291</span></li>
+                      <li><span class="art-title">Landscape Comment</span><span class="art-author">Rapp, Lucien</span><span class="art-pages">p.&nbsp;313</span></li>
+                      <li><span class="art-title">Space Exploration</span><span class="art-author">Egan, M. Jude, Hurtak, James J.</span><span class="art-pages">p.&nbsp;37</span></li>
+                      <li><span class="art-title">National Space Law Summit</span><span class="art-author">Lee, Ricky J.</span><span class="art-pages">p.&nbsp;471</span></li>
+                      <li><span class="art-title">Resources of the Andrew G. Haley Archive</span><span class="art-author">Dodge, Michael S.</span><span class="art-pages">p.&nbsp;5</span></li>
+                      <li><span class="art-title">Activities Pacific Rim National Space Law Summit</span><span class="art-author">Shouping, Li</span><span class="art-pages">p.&nbsp;539</span></li>
+                      <li><span class="art-title">and Activities Pacific Rim National Space Law Summit</span><span class="art-author">Zhao, Haifeng</span><span class="art-pages">p.&nbsp;559</span></li>
+                      <li><span class="art-title">Pacific Rim Comment</span><span class="art-author">Mani, V.S.</span><span class="art-pages">p.&nbsp;615</span></li>
+                      <li><span class="art-title">Standards: Creating an Industry Foundation</span><span class="art-author">Rey, Rene Joseph</span><span class="art-pages">p.&nbsp;75</span></li>
+                    </ul>
+                  </div>
+                  <div class="vol-block" id="v34">
+                    <h3 class="vol-heading">Volume 34 <span class="vol-year">(2008)</span><span class="vol-count">14 articles</span></h3>
+                    <ul class="art-list">
+                      <li><span class="art-title">Remote Sensing Law</span><span class="art-author">Ferreira, Hilcea Santos, Camara, Gilberto</span><span class="art-pages">p.&nbsp;11</span></li>
+                      <li><span class="art-title">Related Systems and Technologies Commentary</span><span class="art-author">Gold, Mike N.</span><span class="art-pages">p.&nbsp;163</span></li>
+                      <li><span class="art-title">Canada - New Legislation for a New Era</span><span class="art-author">Gillon, Thomas</span><span class="art-pages">p.&nbsp;19</span></li>
+                      <li><span class="art-title">National Aeronautics and Space Act</span><span class="art-author">Dembling, Paul G.</span><span class="art-pages">p.&nbsp;203</span></li>
+                      <li><span class="art-title">Aeronautics and Space Act</span><span class="art-author">Frank, Robin J.</span><span class="art-pages">p.&nbsp;221</span></li>
+                      <li><span class="art-title">Anniversary of the National Aeronautics and Space Act</span><span class="art-author">Hammerle, Kurt G., Ro, Theodore U.</span><span class="art-pages">p.&nbsp;241</span></li>
+                      <li><span class="art-title">European Remote Sensing Law and Policy</span><span class="art-author">Harris, Ray</span><span class="art-pages">p.&nbsp;33</span></li>
+                      <li><span class="art-title">International Traffic in Arms Regulations</span><span class="art-author">Robinson, George S., McAdamis, Eric</span><span class="art-pages">p.&nbsp;357</span></li>
+                      <li><span class="art-title">Agreement after Forty Years</span><span class="art-author">von der Dunk, Frans G.</span><span class="art-pages">p.&nbsp;411</span></li>
+                      <li><span class="art-title">Management and Protection of the Environment</span><span class="art-author">Ito, Atsuyo</span><span class="art-pages">p.&nbsp;45</span></li>
+                      <li><span class="art-title">Operations Spatiales (1) Law</span><span class="art-author">Fundamental Act of Outer Space (Law No. 43, 2008)</span><span class="art-pages">p.&nbsp;471</span></li>
+                      <li><span class="art-title">Supported Monopolies Case Note</span><span class="art-author">Crook, Jason A.</span><span class="art-pages">p.&nbsp;497</span></li>
+                      <li><span class="art-title">Satellite Legislation</span><span class="art-author">Mann, Bruce W.</span><span class="art-pages">p.&nbsp;67</span></li>
+                      <li><span class="art-title">Remote Sensing Law</span><span class="art-author">Schmidt-Tedd, Bernhard, Kroymann, Max</span><span class="art-pages">p.&nbsp;97</span></li>
+                    </ul>
+                  </div>
+                  <div class="vol-block" id="v33">
+                    <h3 class="vol-heading">Volume 33 <span class="vol-year">(2007)</span><span class="vol-count">10 articles</span></h3>
+                    <ul class="art-list">
+                      <li><span class="art-title">and Its Legal Foundations in the 20th Century</span><span class="art-author">Hall, R. Cargill</span><span class="art-pages">p.&nbsp;1</span></li>
+                      <li><span class="art-title">in the Soon-to-Launch Space Tourism Industry</span><span class="art-author">Knutson, Tracey</span><span class="art-pages">p.&nbsp;105</span></li>
+                      <li><span class="art-title">the Republic of Korea</span><span class="art-author">Lee, Yoon</span><span class="art-pages">p.&nbsp;123</span></li>
+                      <li><span class="art-title">Rychlak, Ronald J.; Gabrynowicz, Joanne Irene;</span><span class="art-author">Crowsey, Rick</span><span class="art-pages">p.&nbsp;195</span></li>
+                      <li><span class="art-title">Space Legislation</span><span class="art-author">Trepczynski, Susan</span><span class="art-pages">p.&nbsp;221</span></li>
+                      <li><span class="art-title">CSLAA Student Paper</span><span class="art-author">Stotler, Charles W.</span><span class="art-pages">p.&nbsp;245</span></li>
+                      <li><span class="art-title">Individuals in Space</span><span class="art-author">Blount, P. J.</span><span class="art-pages">p.&nbsp;299</span></li>
+                      <li><span class="art-title">Transportation Services (COTS)</span><span class="art-author">Dickerson, Tiphany Baker</span><span class="art-pages">p.&nbsp;341</span></li>
+                      <li><span class="art-title">Hobe, Stephan; Goh, Geradine Meishan;</span><span class="art-author">Neumann, Julia</span><span class="art-pages">p.&nbsp;359</span></li>
+                      <li><span class="art-title">A Study of Aerospace Legislation of China</span><span class="art-author">Yongliang, Qi</span><span class="art-pages">p.&nbsp;405</span></li>
+                    </ul>
+                  </div>
+                  <div class="vol-block" id="v32">
+                    <h3 class="vol-heading">Volume 32 <span class="vol-year">(2006)</span><span class="vol-count">11 articles</span></h3>
+                    <ul class="art-list">
+                      <li><span class="art-title">for Space Exploration: A Dedicated Issue</span><span class="art-author">Haanappel, P. P. C.</span><span class="art-pages">p.&nbsp;1</span></li>
+                      <li><span class="art-title">Space Exploration: A Dedicated Issue</span><span class="art-author">Lyon, Eve</span><span class="art-pages">p.&nbsp;111</span></li>
+                      <li><span class="art-title">Space Exploration: A Dedicated Issue</span><span class="art-author">Robinson, George S.</span><span class="art-pages">p.&nbsp;147</span></li>
+                      <li><span class="art-title">The Vision for Space Exploration: A Dedicated Issue</span><span class="art-author">Tate, LaToya</span><span class="art-pages">p.&nbsp;177</span></li>
+                      <li><span class="art-title">for Space Exploration: A Dedicated Issue - Case Note</span><span class="art-author">Eastlack, Jared W.</span><span class="art-pages">p.&nbsp;203</span></li>
+                      <li><span class="art-title">Exploration: A Dedicated Issue - Commentary</span><span class="art-author">Smith, Marcia S.</span><span class="art-pages">p.&nbsp;217</span></li>
+                      <li><span class="art-title">Intellectual Property Regimes: A Dedicated Issue</span><span class="art-author">Cromer, Julie D.</span><span class="art-pages">p.&nbsp;253</span></li>
+                      <li><span class="art-title">Regimes: A Dedicated Issue</span><span class="art-author">Meifa-Kaiser, Martha</span><span class="art-pages">p.&nbsp;293</span></li>
+                      <li><span class="art-title">Regimes: A Dedicated Issue: Comment</span><span class="art-author">Lockridge, Lee Ann W.</span><span class="art-pages">p.&nbsp;319</span></li>
+                      <li><span class="art-title">Intellectual Property Regimes: A Dedicated Issue</span><span class="art-author">Murray, Kali N.</span><span class="art-pages">p.&nbsp;361</span></li>
+                      <li><span class="art-title">and Intellectual Property Regimes: A Dedicated Issue</span><span class="art-author">Gabrynowicz, Joanne Irene</span><span class="art-pages">p.&nbsp;iii</span></li>
+                    </ul>
+                  </div>
+                  <div class="vol-block" id="v31">
+                    <h3 class="vol-heading">Volume 31 <span class="vol-year">(2005)</span><span class="vol-count">10 articles</span></h3>
+                    <ul class="art-list">
+                      <li><span class="art-title">Commercial Space Launch Amendments Act of 2004</span><span class="art-author">Hughes, Timothy Robert, Rosenberg, Esta</span><span class="art-pages">p.&nbsp;1</span></li>
+                      <li><span class="art-title">for Environmental and Constitutional Lawyers</span><span class="art-author">Robinson, George S.</span><span class="art-pages">p.&nbsp;117</span></li>
+                      <li><span class="art-title">Legal Aspects of Reusable Launch Vehicles</span><span class="art-author">Vissepo, Varlin J.</span><span class="art-pages">p.&nbsp;165</span></li>
+                      <li><span class="art-title">Outer Space (Copous) Commentary</span><span class="art-author">Marchisio, Sergio</span><span class="art-pages">p.&nbsp;219</span></li>
+                      <li><span class="art-title">Space Law and Relevant Publications Bibliography</span><span class="art-author">Randall, Keishunna, Rutland, Jamie</span><span class="art-pages">p.&nbsp;243</span></li>
+                      <li><span class="art-title">the Outer Space Environment</span><span class="art-author">Mirmina, Steven A.</span><span class="art-pages">p.&nbsp;287</span></li>
+                      <li><span class="art-title">in Multilateral Environmental Treaties</span><span class="art-author">Onoda, Masami</span><span class="art-pages">p.&nbsp;339</span></li>
+                      <li><span class="art-title">Salin, Patrick; Ejova, Macha; Golrounia, Ali Akbar;</span><span class="art-author">Weidaw, Kenneth</span><span class="art-pages">p.&nbsp;423</span></li>
+                      <li><span class="art-title">Competitions: A Primer Practice Note</span><span class="art-author">Doyle, Stephen E.</span><span class="art-pages">p.&nbsp;447</span></li>
+                      <li><span class="art-title">Space Law and Relevant Publications Bibliography</span><span class="art-author">Randall, Keishunna, Sandifer, Katrina</span><span class="art-pages">p.&nbsp;467</span></li>
+                    </ul>
+                  </div>
+                  <div class="vol-block" id="v30">
+                    <h3 class="vol-heading">Volume 30 <span class="vol-year">(2004)</span><span class="vol-count">12 articles</span></h3>
+                    <ul class="art-list">
+                      <li><span class="art-title">The Community Patent and Space-Related Inventions</span><span class="art-author">Balsano, Anna Maria, de Clercq, Aude</span><span class="art-pages">p.&nbsp;1</span></li>
+                      <li><span class="art-title">Comparative Analysis of GPS and Galileo</span><span class="art-author">von der Dunk, Frans G.</span><span class="art-pages">p.&nbsp;129</span></li>
+                      <li><span class="art-title">between Russia and Kazakhstan</span><span class="art-author">Bjornerud, Maria</span><span class="art-pages">p.&nbsp;13</span></li>
+                      <li><span class="art-title">the Need for a Defining Constitution Commentary</span><span class="art-author">Robinson, George S.</span><span class="art-pages">p.&nbsp;169</span></li>
+                      <li><span class="art-title">Technology Legal Challenges</span><span class="art-author">Bouvet, Isabelle</span><span class="art-pages">p.&nbsp;203</span></li>
+                      <li><span class="art-title">An Introduction to Space Law for Decision Makers</span><span class="art-author">Gabrynowicz, Joanne Irene, Serrao, Jacqueline Etil</span><span class="art-pages">p.&nbsp;227</span></li>
+                      <li><span class="art-title">Introduction au Droit de L'Espace Pour les Decideurs</span><span class="art-author">Bouvet, Isabelle</span><span class="art-pages">p.&nbsp;234</span></li>
+                      <li><span class="art-title">Responsables de la Toma de Decisiones</span><span class="art-author">Serrano, Virginia Rodriguez</span><span class="art-pages">p.&nbsp;241</span></li>
+                      <li><span class="art-title">Research and a Reasonable Solution</span><span class="art-author">Secunda, Paul M.</span><span class="art-pages">p.&nbsp;251</span></li>
+                      <li><span class="art-title">for a Space Commercialization Regime</span><span class="art-author">Zhao, Yun</span><span class="art-pages">p.&nbsp;277</span></li>
+                      <li><span class="art-title">before the Federal Courts of the United Sates Case</span><span class="art-author">Kelly, Robert</span><span class="art-pages">p.&nbsp;297</span></li>
+                      <li><span class="art-title">Peaceful Uses Commentary</span><span class="art-author">Galloway, Eilene</span><span class="art-pages">p.&nbsp;311</span></li>
+                    </ul>
+                  </div>
+                  <div class="vol-block" id="v29">
+                    <h3 class="vol-heading">Volume 29 <span class="vol-year">(2003)</span><span class="vol-count">6 articles</span></h3>
+                    <ul class="art-list">
+                      <li><span class="art-title">Space Activities</span><span class="art-author">Abeyratne, Ruwantissa</span><span class="art-pages">p.&nbsp;1</span></li>
+                      <li><span class="art-title">Communications: An Overview</span><span class="art-author">Veshchunov, Victor S., Stovboun, Victoria D.</span><span class="art-pages">p.&nbsp;121</span></li>
+                      <li><span class="art-title">Law - A Commentary Commentary</span><span class="art-author">Oduntan, Gbenga</span><span class="art-pages">p.&nbsp;185</span></li>
+                      <li><span class="art-title">Robotics: Legal and Regulatory Considerations</span><span class="art-author">Brisibe, Tare C.</span><span class="art-pages">p.&nbsp;21</span></li>
+                      <li><span class="art-title">Trade Regulation</span><span class="art-author">Donovan, Patrick J.</span><span class="art-pages">p.&nbsp;31</span></li>
+                      <li><span class="art-title">Dissemination of Satellite Imagery</span><span class="art-author">Jakhu, Ram</span><span class="art-pages">p.&nbsp;65</span></li>
+                    </ul>
+                  </div>
+                  <div class="vol-block" id="v28">
+                    <h3 class="vol-heading">Volume 28 <span class="vol-year">(2000)</span><span class="vol-count">2 articles</span></h3>
+                    <ul class="art-list">
+                      <li><span class="art-title">On the Privatisation of INTELSAT</span><span class="art-author">Lyall, Francis</span><span class="art-pages">p.&nbsp;101</span></li>
+                      <li><span class="art-title">Where is the Law</span><span class="art-author">Gorove, Katherine M.</span><span class="art-pages">p.&nbsp;11</span></li>
+                    </ul>
+                  </div>
+                  <div class="vol-block" id="v27">
+                    <h3 class="vol-heading">Volume 27 <span class="vol-year">(1999)</span><span class="vol-count">1 articles</span></h3>
+                    <ul class="art-list">
+                      <li><span class="art-title">Provisional Application in an International Organization</span><span class="art-author">Sagar, David</span><span class="art-pages">p.&nbsp;99</span></li>
+                    </ul>
+                  </div>
+                  <div class="vol-block" id="v26">
+                    <h3 class="vol-heading">Volume 26 <span class="vol-year">(1998)</span><span class="vol-count">5 articles</span></h3>
+                    <ul class="art-list">
+                      <li><span class="art-title">Agreement of 1979</span><span class="art-author">Doyle, Stephen E.</span><span class="art-pages">p.&nbsp;111</span></li>
+                      <li><span class="art-title">Space Debris and International Law</span><span class="art-author">Jasentuliyana, N.</span><span class="art-pages">p.&nbsp;139</span></li>
+                      <li><span class="art-title">Space Law in the 21st Century</span><span class="art-author">Galloway, Eilene</span><span class="art-pages">p.&nbsp;187</span></li>
+                      <li><span class="art-title">Prospective Space Law</span><span class="art-author">Cocca, Aldo Armando</span><span class="art-pages">p.&nbsp;51</span></li>
+                      <li><span class="art-title">Anniversary Greeting Note</span><span class="art-author">Vereshchetin, Vladlen S.</span><span class="art-pages">p.&nbsp;99</span></li>
+                    </ul>
+                  </div>
+                  <div class="vol-block" id="v25">
+                    <h3 class="vol-heading">Volume 25 <span class="vol-year">(1997)</span><span class="vol-count">3 articles</span></h3>
+                    <ul class="art-list">
+                      <li><span class="art-title">International Custom</span><span class="art-author">Terekhov, Andrei D.</span><span class="art-pages">p.&nbsp;1</span></li>
+                      <li><span class="art-title">and Its Effect on Environmental Protection</span><span class="art-author">Abeyratne, R. I. R.</span><span class="art-pages">p.&nbsp;17</span></li>
+                      <li><span class="art-title">The Outer Space Treaty in Perspective</span><span class="art-author">Qizhi, He</span><span class="art-pages">p.&nbsp;93</span></li>
+                    </ul>
+                  </div>
+                  <div class="vol-block" id="v24">
+                    <h3 class="vol-heading">Volume 24 <span class="vol-year">(1996)</span><span class="vol-count">2 articles</span></h3>
+                    <ul class="art-list">
+                      <li><span class="art-title">The Growth of Space Law through the Cases</span><span class="art-author">Gorove, Stephen</span><span class="art-pages">p.&nbsp;1</span></li>
+                      <li><span class="art-title">Financing and Insurance Aspects of Spacecraft</span><span class="art-author">Diederiks-Verschoor, I. H. Ph.</span><span class="art-pages">p.&nbsp;97</span></li>
+                    </ul>
+                  </div>
+                  <div class="vol-block" id="v23">
+                    <h3 class="vol-heading">Volume 23 <span class="vol-year">(1995)</span><span class="vol-count">1 articles</span></h3>
+                    <ul class="art-list">
+                      <li><span class="art-title">for Low Earth Orbit Satellite Communications Systems</span><span class="art-author">Rothblatt, Martine</span><span class="art-pages">p.&nbsp;123</span></li>
+                    </ul>
+                  </div>
+                  <div class="vol-block" id="v22">
+                    <h3 class="vol-heading">Volume 22 <span class="vol-year">(1994)</span><span class="vol-count">4 articles</span></h3>
+                    <ul class="art-list">
+                      <li><span class="art-title">Judge Manfred Lachs and the Principle of Jus Cogens</span><span class="art-author">Christol, Carl Q.</span><span class="art-pages">p.&nbsp;33</span></li>
+                      <li><span class="art-title">Aerospace Systems</span><span class="art-author">Kopal, Vladimir</span><span class="art-pages">p.&nbsp;57</span></li>
+                      <li><span class="art-title">Buick Sputters into the Space Age</span><span class="art-author">Bostwick, Phillip D.</span><span class="art-pages">p.&nbsp;75</span></li>
+                      <li><span class="art-title">The Role of ESA in the Evolution of Space Law</span><span class="art-author">Lafferranderie, Gabriel, Tuinder, Paul Henry</span><span class="art-pages">p.&nbsp;97</span></li>
+                    </ul>
+                  </div>
+                  <div class="vol-block" id="v21">
+                    <h3 class="vol-heading">Volume 21 <span class="vol-year">(1993)</span><span class="vol-count">4 articles</span></h3>
+                    <ul class="art-list">
+                      <li><span class="art-title">Settlement of Disputes Regarding Space Activities</span><span class="art-author">Bockstiegel, Karl-Heinz</span><span class="art-pages">p.&nbsp;1</span></li>
+                      <li><span class="art-title">International Legal and Policy Imperative</span><span class="art-author">Gorove, Stephen</span><span class="art-pages">p.&nbsp;11</span></li>
+                      <li><span class="art-title">U.S. Space Insurance Related Disputes and Litigation</span><span class="art-author">Tucker, Stephen</span><span class="art-pages">p.&nbsp;123</span></li>
+                      <li><span class="art-title">Activities of Space Transportation</span><span class="art-author">Wassenbergh, Henri A.</span><span class="art-pages">p.&nbsp;97</span></li>
+                    </ul>
+                  </div>
+                  <div class="vol-block" id="v20">
+                    <h3 class="vol-heading">Volume 20 <span class="vol-year">(1992)</span><span class="vol-count">3 articles</span></h3>
+                    <ul class="art-list">
+                      <li><span class="art-title">Environment by Space Technology</span><span class="art-author">Qizhi, HE</span><span class="art-pages">p.&nbsp;111</span></li>
+                      <li><span class="art-title">European Community in Space Affairs</span><span class="art-author">Madders, K.J., Thiebaut, W.M.</span><span class="art-pages">p.&nbsp;117</span></li>
+                      <li><span class="art-title">Telecommunications</span><span class="art-author">Rothblatt, Martin A.</span><span class="art-pages">p.&nbsp;27</span></li>
+                    </ul>
+                  </div>
+                  <div class="vol-block" id="v19">
+                    <h3 class="vol-heading">Volume 19 <span class="vol-year">(1991)</span><span class="vol-count">3 articles</span></h3>
+                    <ul class="art-list">
+                      <li><span class="art-title">The 1986 Challenger Disaster: Legal Ramifications</span><span class="art-author">Dembling, Paul G., Walters, Richard C.</span><span class="art-pages">p.&nbsp;1</span></li>
+                      <li><span class="art-title">Net Set of United Nations Principles</span><span class="art-author">Kopal, Vladimir</span><span class="art-pages">p.&nbsp;103</span></li>
+                      <li><span class="art-title">Meet the Challenge</span><span class="art-author">Christol, Carl Q.</span><span class="art-pages">p.&nbsp;123</span></li>
+                    </ul>
+                  </div>
+                  <div class="vol-block" id="v18">
+                    <h3 class="vol-heading">Volume 18 <span class="vol-year">(1990)</span><span class="vol-count">5 articles</span></h3>
+                    <ul class="art-list">
+                      <li><span class="art-title">Legislation - An International Perspective</span><span class="art-author">Lafferranderie, G.</span><span class="art-pages">p.&nbsp;1</span></li>
+                      <li><span class="art-title">The Status of Radio Spacecasting under Space Law</span><span class="art-author">Rothblatt, Martin</span><span class="art-pages">p.&nbsp;113</span></li>
+                      <li><span class="art-title">International Organizations</span><span class="art-author">Doyle, Stephen E.</span><span class="art-pages">p.&nbsp;123</span></li>
+                      <li><span class="art-title">Interaction between Space Technology and Space Law</span><span class="art-author">Perek, Lubos</span><span class="art-pages">p.&nbsp;19</span></li>
+                      <li><span class="art-title">The Growth of Domestic Space Law: A U.S. Example</span><span class="art-author">Gorove, Stephen</span><span class="art-pages">p.&nbsp;99</span></li>
+                    </ul>
+                  </div>
+                  <div class="vol-block" id="v17">
+                    <h3 class="vol-heading">Volume 17 <span class="vol-year">(1989)</span><span class="vol-count">5 articles</span></h3>
+                    <ul class="art-list">
+                      <li><span class="art-title">Development in International Space Law (Part II)</span><span class="art-author">von Noorden, Wolf, Dann, Philip</span><span class="art-pages">p.&nbsp;103</span></li>
+                      <li><span class="art-title">Especially for the Developing Countries</span><span class="art-author">Diederiks-Verschoor, I. H. Ph.</span><span class="art-pages">p.&nbsp;115</span></li>
+                      <li><span class="art-title">Article I of the Outer Space Treaty Revisited</span><span class="art-author">Jasentuliyana, N.</span><span class="art-pages">p.&nbsp;129</span></li>
+                      <li><span class="art-title">Warc-Orb 85-88 Concluded</span><span class="art-author">Doyle, Stephen E.</span><span class="art-pages">p.&nbsp;13</span></li>
+                      <li><span class="art-title">Intellectual Property Rights</span><span class="art-author">Oosterlinck, R.</span><span class="art-pages">p.&nbsp;23</span></li>
+                    </ul>
+                  </div>
+                  <div class="vol-block" id="v16">
+                    <h3 class="vol-heading">Volume 16 <span class="vol-year">(1988)</span><span class="vol-count">5 articles</span></h3>
+                    <ul class="art-list">
+                      <li><span class="art-title">In Honor of Dr. Pepin Note</span><span class="art-author">Zhukov, G.P.</span><span class="art-pages">p.&nbsp;1</span></li>
+                      <li><span class="art-title">Measures for International Protection</span><span class="art-author">Qizhi, HE</span><span class="art-pages">p.&nbsp;117</span></li>
+                      <li><span class="art-title">Legal and Policy Issues of the Aerospace Plane</span><span class="art-author">Gorove, Stephen</span><span class="art-pages">p.&nbsp;147</span></li>
+                      <li><span class="art-title">Remote Sensing and International Space Law</span><span class="art-author">Christol, Carl Q.</span><span class="art-pages">p.&nbsp;21</span></li>
+                      <li><span class="art-title">in the Progressive Development of Space Law</span><span class="art-author">Kopal, Vladimir</span><span class="art-pages">p.&nbsp;5</span></li>
+                    </ul>
+                  </div>
+                  <div class="vol-block" id="v15">
+                    <h3 class="vol-heading">Volume 15 <span class="vol-year">(1987)</span><span class="vol-count">4 articles</span></h3>
+                    <ul class="art-list">
+                      <li><span class="art-title">Weapons in Outer Space</span><span class="art-author">Goedhuis, D.</span><span class="art-pages">p.&nbsp;101</span></li>
+                      <li><span class="art-title">Development in International Space Law (Part II)</span><span class="art-author">von Noorden, Wolf D.</span><span class="art-pages">p.&nbsp;147</span></li>
+                      <li><span class="art-title">Development in International Space Law (Part I)</span><span class="art-author">von Noorden, Wolf D.</span><span class="art-pages">p.&nbsp;25</span></li>
+                      <li><span class="art-title">The U.S./International Space Station</span><span class="art-author">O'Brien, John E.</span><span class="art-pages">p.&nbsp;35</span></li>
+                    </ul>
+                  </div>
+                  <div class="vol-block" id="v14">
+                    <h3 class="vol-heading">Volume 14 <span class="vol-year">(1986)</span><span class="vol-count">4 articles</span></h3>
+                    <ul class="art-list">
+                      <li><span class="art-title">Space Station: Risks and Vision</span><span class="art-author">Pedersen, Ken</span><span class="art-pages">p.&nbsp;1</span></li>
+                      <li><span class="art-title">Products Used in Commercial Space Activities</span><span class="art-author">Craft, Randal R. Jr.</span><span class="art-pages">p.&nbsp;113</span></li>
+                      <li><span class="art-title">Applying Space Technology</span><span class="art-author">Leese, John A.</span><span class="art-pages">p.&nbsp;140</span></li>
+                      <li><span class="art-title">Power Sources in Outer Space</span><span class="art-author">Qizhi, He</span><span class="art-pages">p.&nbsp;95</span></li>
+                    </ul>
+                  </div>
+                  <div class="vol-block" id="v13">
+                    <h3 class="vol-heading">Volume 13 <span class="vol-year">(1985)</span><span class="vol-count">4 articles</span></h3>
+                    <ul class="art-list">
+                      <li><span class="art-title">NASA and the Practice of Space Law</span><span class="art-author">Hosenball, S. Neil</span><span class="art-pages">p.&nbsp;1</span></li>
+                      <li><span class="art-title">Satellite Telecommunications</span><span class="art-author">Colino, Richard R.</span><span class="art-pages">p.&nbsp;103</span></li>
+                      <li><span class="art-title">and Disarmament Negotiations</span><span class="art-author">Christol, Carl Q.</span><span class="art-pages">p.&nbsp;157</span></li>
+                      <li><span class="art-title">Intellectual Property and Space Activities</span><span class="art-author">Luxenberg, Barbara, Mossinghoff, Gerald J.</span><span class="art-pages">p.&nbsp;8</span></li>
+                    </ul>
+                  </div>
+                  <div class="vol-block" id="v12">
+                    <h3 class="vol-heading">Volume 12 <span class="vol-year">(1984)</span><span class="vol-count">6 articles</span></h3>
+                    <ul class="art-list">
+                      <li><span class="art-title">an Arms Race in Outer Space</span><span class="art-author">Danielsson, Sune</span><span class="art-pages">p.&nbsp;1</span></li>
+                      <li><span class="art-title">Experience: Some Lessons Learned</span><span class="art-author">Gantt, John B.</span><span class="art-pages">p.&nbsp;109</span></li>
+                      <li><span class="art-title">Institutional Framework of the United Nations</span><span class="art-author">Kopal, Vladimir</span><span class="art-pages">p.&nbsp;12</span></li>
+                      <li><span class="art-title">and Alternatives</span><span class="art-author">Marshall, Harry R. Jr.</span><span class="art-pages">p.&nbsp;163</span></li>
+                      <li><span class="art-title">Practitioner's Perspective</span><span class="art-author">Rothblatt, Martin A.</span><span class="art-pages">p.&nbsp;26</span></li>
+                      <li><span class="art-title">Operations Using Expendable Launch Vehicles</span><span class="art-author">Myers, James R.</span><span class="art-pages">p.&nbsp;40</span></li>
+                    </ul>
+                  </div>
+                  <div class="vol-block" id="v11">
+                    <h3 class="vol-heading">Volume 11 <span class="vol-year">(1983)</span><span class="vol-count">11 articles</span></h3>
+                    <ul class="art-list">
+                      <li><span class="art-title">Private Enterprise</span><span class="art-author">Finch, Edward R. Jr.</span><span class="art-pages">p.&nbsp;107</span></li>
+                      <li><span class="art-title">Private Industry</span><span class="art-author">Hoover, Roger K.</span><span class="art-pages">p.&nbsp;115</span></li>
+                      <li><span class="art-title">Regional Role - Focus on the European Space Agency</span><span class="art-author">Gibson, Roy</span><span class="art-pages">p.&nbsp;15</span></li>
+                      <li><span class="art-title">Current Perspective</span><span class="art-author">Pedersen, Kenneth S.</span><span class="art-pages">p.&nbsp;21</span></li>
+                      <li><span class="art-title">The Spacelab Program and Related Legal Issues</span><span class="art-author">Bourely, M.G.</span><span class="art-pages">p.&nbsp;27</span></li>
+                      <li><span class="art-title">Congress in Space Law and Policy</span><span class="art-author">Galloway, Eilene</span><span class="art-pages">p.&nbsp;35</span></li>
+                      <li><span class="art-title">Administrative Radio Conference</span><span class="art-author">Stowe, Ronald F.</span><span class="art-pages">p.&nbsp;61</span></li>
+                      <li><span class="art-title">Arms Control - Outer Space</span><span class="art-author">Wulf, Norman</span><span class="art-pages">p.&nbsp;67</span></li>
+                      <li><span class="art-title">The Case for Multilateral Agreements</span><span class="art-author">Dembling, Paul G., Smith, Delbert D.</span><span class="art-pages">p.&nbsp;73</span></li>
+                      <li><span class="art-title">for Satellite Power</span><span class="art-author">Wagner, Peter E.</span><span class="art-pages">p.&nbsp;83</span></li>
+                      <li><span class="art-title">Delimitation of Outer Space and Definition of Peaceful</span><span class="art-author">Cheng, Bin</span><span class="art-pages">p.&nbsp;89</span></li>
+                    </ul>
+                  </div>
+                  <div class="vol-block" id="v10">
+                    <h3 class="vol-heading">Volume 10 <span class="vol-year">(1982)</span><span class="vol-count">6 articles</span></h3>
+                    <ul class="art-list">
+                      <li><span class="art-title">against Third Party Liability</span><span class="art-author">Dembling, Paul G.</span><span class="art-pages">p.&nbsp;1</span></li>
+                      <li><span class="art-title">Intellectual Property Rights in Space Ventures</span><span class="art-author">Mossinghoff, Gerald J.</span><span class="art-pages">p.&nbsp;107</span></li>
+                      <li><span class="art-title">Escalation in Outer Space</span><span class="art-author">Goedhuis, D.</span><span class="art-pages">p.&nbsp;13</span></li>
+                      <li><span class="art-title">to the Formation of Space Law</span><span class="art-author">Bourely, Michel</span><span class="art-pages">p.&nbsp;139</span></li>
+                      <li><span class="art-title">Astronauts and Seamen - A Legal Comparison</span><span class="art-author">DeSaussure, Hamilton</span><span class="art-pages">p.&nbsp;165</span></li>
+                      <li><span class="art-title">Geostationary Platforms: Legal Estate in Space</span><span class="art-author">Smith, Delbert D., Rothblatt, Martin A.</span><span class="art-pages">p.&nbsp;31</span></li>
+                    </ul>
+                  </div>
+                  <div class="vol-block" id="v9">
+                    <h3 class="vol-heading">Volume 9 <span class="vol-year">(1981)</span><span class="vol-count">6 articles</span></h3>
+                    <ul class="art-list">
+                      <li><span class="art-title">for the Next Decade</span><span class="art-author">Doyle, Stephen E.</span><span class="art-pages">p.&nbsp;105</span></li>
+                      <li><span class="art-title">Perspectives of Space Law</span><span class="art-author">Galloway, Eilene</span><span class="art-pages">p.&nbsp;21</span></li>
+                      <li><span class="art-title">of Interrelations</span><span class="art-author">Vereschetin, V. S.</span><span class="art-pages">p.&nbsp;31</span></li>
+                      <li><span class="art-title">Commercial Participation in Space Activities</span><span class="art-author">Menter, Martin</span><span class="art-pages">p.&nbsp;53</span></li>
+                      <li><span class="art-title">Treaty: The Search for a Position</span><span class="art-author">Christol, Carl Q.</span><span class="art-pages">p.&nbsp;77</span></li>
+                      <li><span class="art-title">(An Oceanic View of Space Transport)</span><span class="art-author">DeSaussure, Hamilton</span><span class="art-pages">p.&nbsp;93</span></li>
+                    </ul>
+                  </div>
+                  <div class="vol-block" id="v8">
+                    <h3 class="vol-heading">Volume 8 <span class="vol-year">(1980)</span><span class="vol-count">5 articles</span></h3>
+                    <ul class="art-list">
+                      <li><span class="art-title">on Developments, 1970-1980</span><span class="art-author">Mossinghoff, Gerald J., Fuqua, Laura D.</span><span class="art-pages">p.&nbsp;103</span></li>
+                      <li><span class="art-title">The Questions of Defining Outer Space</span><span class="art-author">Kopal, Vladimir</span><span class="art-pages">p.&nbsp;154</span></li>
+                      <li><span class="art-title">on Outstanding Legal Issues</span><span class="art-author">Gorove, Stephen</span><span class="art-pages">p.&nbsp;174</span></li>
+                      <li><span class="art-title">Space Law: A New Proposal</span><span class="art-author">Lay, Fernando</span><span class="art-pages">p.&nbsp;41</span></li>
+                      <li><span class="art-title">Communication Satellites: INMARSAT</span><span class="art-author">Sondaal, H. H. M.</span><span class="art-pages">p.&nbsp;9</span></li>
+                    </ul>
+                  </div>
+                  <div class="vol-block" id="v7">
+                    <h3 class="vol-heading">Volume 7 <span class="vol-year">(1979)</span><span class="vol-count">6 articles</span></h3>
+                    <ul class="art-list">
+                      <li><span class="art-title">Space - An Opportunity for the Future</span><span class="art-author">Robinson, Marvin W.</span><span class="art-pages">p.&nbsp;131</span></li>
+                      <li><span class="art-title">Where Air Space Ends and Outer Space Begins</span><span class="art-author">Rosenfield, Stanley B.</span><span class="art-pages">p.&nbsp;137</span></li>
+                      <li><span class="art-title">of the Space Treaty</span><span class="art-author">Bueckling, Adrian</span><span class="art-pages">p.&nbsp;15</span></li>
+                      <li><span class="art-title">Some Problems of State Responsibility in Outer Space</span><span class="art-author">Wiewiorowska, Krystyna</span><span class="art-pages">p.&nbsp;23</span></li>
+                      <li><span class="art-title">Committee on the Peaceful Uses of Outer Space</span><span class="art-author">Galloway, Eilene</span><span class="art-pages">p.&nbsp;3</span></li>
+                      <li><span class="art-title">Space Law as It Affects Domestic Law</span><span class="art-author">Diederiks-Verschoor, I. H. Ph.</span><span class="art-pages">p.&nbsp;39</span></li>
+                    </ul>
+                  </div>
+                  <div class="vol-block" id="v6">
+                    <h3 class="vol-heading">Volume 6 <span class="vol-year">(1978)</span><span class="vol-count">7 articles</span></h3>
+                    <ul class="art-list">
+                      <li><span class="art-title">Reentering Space Objects: Facts and Fiction</span><span class="art-author">Doyle, S. E.</span><span class="art-pages">p.&nbsp;107</span></li>
+                      <li><span class="art-title">Nuclear Power Sources in Outer Space</span><span class="art-author">Hosenball, S. Neil</span><span class="art-pages">p.&nbsp;119</span></li>
+                      <li><span class="art-title">Cosmos 954 and the Space Treaties</span><span class="art-author">Dembling, Paul G.</span><span class="art-pages">p.&nbsp;129</span></li>
+                      <li><span class="art-title">Cosmos 954: Issues of Law and Policy</span><span class="art-author">Gorove, Stephen</span><span class="art-pages">p.&nbsp;137</span></li>
+                      <li><span class="art-title">Some Observations on the Crash of Cosmos 954</span><span class="art-author">Haanappel, Peter P. C.</span><span class="art-pages">p.&nbsp;147</span></li>
+                      <li><span class="art-title">An Integrated Legal System for Space</span><span class="art-author">DeSaussure, Hamilton</span><span class="art-pages">p.&nbsp;179</span></li>
+                      <li><span class="art-title">Legal Issues Inherent in Space Shuttle Operations</span><span class="art-author">Mossinghoff, Gerald J., Sloup, George Paul</span><span class="art-pages">p.&nbsp;47</span></li>
+                    </ul>
+                  </div>
+                  <div class="vol-block" id="v5">
+                    <h3 class="vol-heading">Volume 5 <span class="vol-year">(1977)</span><span class="vol-count">8 articles</span></h3>
+                    <ul class="art-list">
+                      <li><span class="art-title">The Fifth Anniversary of the Journal of Space Law</span><span class="art-author">Swenson, Charles David</span><span class="art-pages">p.&nbsp;1</span></li>
+                      <li><span class="art-title">Remote Sensing of the Earth from Outer Space</span><span class="art-author">Stowe, Ronald F.</span><span class="art-pages">p.&nbsp;101</span></li>
+                      <li><span class="art-title">Scientific Criteria for the Delimitation of Outer Space</span><span class="art-author">Perek, Lubos</span><span class="art-pages">p.&nbsp;111</span></li>
+                      <li><span class="art-title">Organizations and the Law of Outer Space</span><span class="art-author">Galloway, Eilene</span><span class="art-pages">p.&nbsp;3</span></li>
+                      <li><span class="art-title">The New European Space Agency</span><span class="art-author">Kaltenecker, Hans</span><span class="art-pages">p.&nbsp;37</span></li>
+                      <li><span class="art-title">Organization - Origins and Structure</span><span class="art-author">Doyle, Stephen E.</span><span class="art-pages">p.&nbsp;45</span></li>
+                      <li><span class="art-title">Peaceful Uses of Outer Space: An Overview</span><span class="art-author">Jankowitsch, Peter</span><span class="art-pages">p.&nbsp;7</span></li>
+                      <li><span class="art-title">Broadcasting Satellite Service</span><span class="art-author">Butler, Richard E.</span><span class="art-pages">p.&nbsp;93</span></li>
+                    </ul>
+                  </div>
+                  <div class="vol-block" id="v4">
+                    <h3 class="vol-heading">Volume 4 <span class="vol-year">(1976)</span><span class="vol-count">4 articles</span></h3>
+                    <ul class="art-list">
+                      <li><span class="art-title">Ecospace and Some of Its Legal Implications</span><span class="art-author">Finch, Edward R. Jr., Moore, Amanda Lee</span><span class="art-pages">p.&nbsp;117</span></li>
+                      <li><span class="art-title">Environmental Law</span><span class="art-author">Christol, Carl Q.</span><span class="art-pages">p.&nbsp;23</span></li>
+                      <li><span class="art-title">1967 Outer Space Treaty</span><span class="art-author">Markoff, Marko G.</span><span class="art-pages">p.&nbsp;3</span></li>
+                      <li><span class="art-title">Remote Sensing and State Sovereignty</span><span class="art-author">Polter, D. M.</span><span class="art-pages">p.&nbsp;99</span></li>
+                    </ul>
+                  </div>
+                  <div class="vol-block" id="v3">
+                    <h3 class="vol-heading">Volume 3 <span class="vol-year">(1975)</span><span class="vol-count">5 articles</span></h3>
+                    <ul class="art-list">
+                      <li><span class="art-title">Broadcast Satellites - Prospects and Problems</span><span class="art-author">Gehrig, James J.</span><span class="art-pages">p.&nbsp;25</span></li>
+                      <li><span class="art-title">Legal Implications of Direct Broadcast Technology</span><span class="art-author">Pikus, Irwin M.</span><span class="art-pages">p.&nbsp;39</span></li>
+                      <li><span class="art-title">Direct Broadcast Satellites</span><span class="art-author">Patermann, Christian</span><span class="art-pages">p.&nbsp;47</span></li>
+                      <li><span class="art-title">Alternatives in Case of an Impasse</span><span class="art-author">Gorove, Stephen</span><span class="art-pages">p.&nbsp;55</span></li>
+                      <li><span class="art-title">Freedom of Information</span><span class="art-author">Dauses, Mandred A.</span><span class="art-pages">p.&nbsp;59</span></li>
+                    </ul>
+                  </div>
+                  <div class="vol-block" id="v2">
+                    <h3 class="vol-heading">Volume 2 <span class="vol-year">(1974)</span><span class="vol-count">5 articles</span></h3>
+                    <ul class="art-list">
+                      <li><span class="art-title">International Implications of Space Communications</span><span class="art-author">McCall, Jerry C.</span><span class="art-pages">p.&nbsp;1</span></li>
+                      <li><span class="art-title">Arrangements in the Americas</span><span class="art-author">Hallgarten, Katherine Drew</span><span class="art-pages">p.&nbsp;107</span></li>
+                      <li><span class="art-title">Jurisdiction over Man-Made Orbital Satellites</span><span class="art-author">Menter, Martin</span><span class="art-pages">p.&nbsp;19</span></li>
+                      <li><span class="art-title">Proposed Moon Treaty</span><span class="art-author">Gorove, Stephen</span><span class="art-pages">p.&nbsp;27</span></li>
+                      <li><span class="art-title">Emergence of Direct Broadcast</span><span class="art-author">Cocca, Aldo Armando</span><span class="art-pages">p.&nbsp;83</span></li>
+                    </ul>
+                  </div>
+                  <div class="vol-block" id="v1">
+                    <h3 class="vol-heading">Volume 1 <span class="vol-year">(1973)</span><span class="vol-count">4 articles</span></h3>
+                    <ul class="art-list">
+                      <li><span class="art-title">The Formal Legal Status of Lunar Stations</span><span class="art-author">Bueckling, Adrian</span><span class="art-pages">p.&nbsp;113</span></li>
+                      <li><span class="art-title">Broadcasting by Satellites</span><span class="art-author">Busak, Jan</span><span class="art-pages">p.&nbsp;139</span></li>
+                      <li><span class="art-title">Resources Satellites - A Pro and Con Analysis</span><span class="art-author">Galloway, Eilene</span><span class="art-pages">p.&nbsp;72</span></li>
+                      <li><span class="art-title">Earth Resources Survey Satellites and International</span><span class="art-author">Gorove, Stephen</span><span class="art-pages">p.&nbsp;80</span></li>
+                    </ul>
+                  </div>
+                </div>
+                        </section>
+        </main>
+    </div>
+
+    <!-- Contact Page -->
+    <div id="contact" class="page-content">
+        <main>
+            <section class="section">
+                <h2 class="section-title">Contact Us</h2>
+                <p style="margin-bottom: 2rem;">If you have questions about the Journal of Space Law or want to get involved, please contact us using the form below:</p>
+                
+                <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Journal of Space Law. All rights reserved.</p>
+        <p>Published by the <a href="https://olemiss.edu/airandspacelaw/" target="_blank">Center for Air and Space Law</a> at the University of Mississippi School of Law.</p>
+    </footer>
+
+    <script>
+
+        // Archive search filter
+        const archiveSearch = document.getElementById('archive-search');
+        if (archiveSearch) {
+            archiveSearch.addEventListener('input', function() {
+                const q = this.value.toLowerCase();
+                document.querySelectorAll('.vol-block').forEach(block => {
+                    let anyMatch = false;
+                    block.querySelectorAll('.art-list li').forEach(li => {
+                        const text = li.textContent.toLowerCase();
+                        const match = !q || text.includes(q);
+                        li.style.display = match ? '' : 'none';
+                        if (match) anyMatch = true;
+                    });
+                    block.style.display = (!q || anyMatch) ? '' : 'none';
+                });
+            });
+        }
+
+        function showPage(pageId) {
+            // Hide all pages
+            document.querySelectorAll('.page-content').forEach(page => {
+                page.classList.remove('active');
+            });
+            
+            // Show selected page
+            document.getElementById(pageId).classList.add('active');
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+    </script>
+</body>
+</html>

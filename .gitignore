@@ -1,0 +1,19 @@
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Python scripts (not needed for deployment)
+*.py
+
+# Temporary files
+*.tmp
+*.log
+.DS_Store
+Thumbs.db
+
+# Reports and CSVs (optional - remove these lines if you want them included)
+extraction_report.csv
+missing_articles.txt
+volumes/SCAN_REPORT.txt
+volumes/missing_articles.csv
