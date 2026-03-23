@@ -1342,20 +1342,12 @@
                 <h2 class="section-title">Ask the Space Law Assistant</h2>
                 <p>Have a question about space law? Ask our AI assistant, trained on the Journal of Space Law's archive.</p>
             </div>
-            <div class="chat-window">
-                <div class="chat-messages" id="chat-messages">
-                    <div class="chat-bubble bot">
-                        Hello! I'm the Journal of Space Law assistant. Ask me anything about space law, treaty frameworks, commercial space activities, or our published articles.
-                    </div>
-                </div>
-                <div class="chat-input-row">
-                    <input id="chat-input" type="text" placeholder="Ask a question about space law…" autocomplete="off"/>
-                    <button id="chat-send">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-                        Send
-                    </button>
-                </div>
-            </div>
+            <!-- Chat Widget -->
+            <div id="jsl-chat"></div>
+            <script
+              src="https://widget-one-beta.vercel.app/chat-widget.js"
+              data-api-url="https://api-spacejournal.vercel.app/api/chat">
+            </script>
             <p class="chat-disclaimer">This assistant is for educational purposes only. All responses should be independently verified for accuracy.</p>
         </div>
     </div>
@@ -1404,81 +1396,6 @@
             });
         }
 
-        // ── Chatbot ──
-        const chatMessages = document.getElementById('chat-messages');
-        const chatInput    = document.getElementById('chat-input');
-        const chatSend     = document.getElementById('chat-send');
-
-        function addBubble(text, role) {
-            const div = document.createElement('div');
-            div.className = 'chat-bubble ' + role;
-            div.textContent = text;
-            chatMessages.appendChild(div);
-            chatMessages.scrollTop = chatMessages.scrollHeight;
-            return div;
-        }
-
-        async function sendMessage() {
-            const question = chatInput.value.trim();
-            if (!question) return;
-            chatInput.value = '';
-            chatSend.disabled = true;
-            chatInput.disabled = true;
-            addBubble(question, 'user');
-            const botBubble = addBubble('Thinking…', 'bot thinking');
-            try {
-                const res = await fetch('https://api-spacejournal.vercel.app/api/chat', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ query: question })
-                });
-                if (!res.ok) throw new Error('Network error');
-                const contentType = res.headers.get('content-type') || '';
-                if (contentType.includes('text/event-stream') || contentType.includes('text/plain')) {
-                    const reader = res.body.getReader();
-                    const decoder = new TextDecoder();
-                    let buffer = '', fullText = '';
-                    botBubble.classList.remove('thinking');
-                    botBubble.textContent = '';
-                    while (true) {
-                        const { done, value } = await reader.read();
-                        if (done) break;
-                        buffer += decoder.decode(value, { stream: true });
-                        const lines = buffer.split('\n');
-                        buffer = lines.pop();
-                        for (const line of lines) {
-                            if (line.startsWith('data: ')) {
-                                const data = line.slice(6).trim();
-                                if (data === '[DONE]') break;
-                                try {
-                                    const parsed = JSON.parse(data);
-                                    fullText += parsed.content || parsed.text || parsed.delta || parsed.answer || '';
-                                } catch { fullText += data; }
-                                botBubble.textContent = fullText;
-                                chatMessages.scrollTop = chatMessages.scrollHeight;
-                            }
-                        }
-                    }
-                    if (!fullText) botBubble.textContent = 'No response received.';
-                } else {
-                    const data = await res.json();
-                    botBubble.classList.remove('thinking');
-                    botBubble.textContent = data.answer || data.content || data.text || JSON.stringify(data);
-                }
-            } catch (err) {
-                botBubble.classList.remove('thinking');
-                botBubble.textContent = 'Sorry, I couldn\'t connect to the assistant. Please try again.';
-            } finally {
-                chatSend.disabled = false;
-                chatInput.disabled = false;
-                chatInput.focus();
-            }
-        }
-
-        if (chatSend) chatSend.addEventListener('click', sendMessage);
-        if (chatInput) chatInput.addEventListener('keydown', e => {
-            if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendMessage(); }
-        });
     </script>
 </body>
 </html>
