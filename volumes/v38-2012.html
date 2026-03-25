@@ -5,83 +5,28 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Volume 38 (2012) | Journal of Space Law</title>
-<style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        :root {
-            --primary: #1a365d;
-            --secondary: #2c5282;
-            --accent: #c53030;
-            --light: #f7fafc;
-            --dark: #1a202c;
-            --gray: #718096;
-            --border: #e2e8f0;
-        }
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: var(--dark); background: var(--light); }
-        
-        header { background: var(--primary); color: white; padding: 1rem 2rem; position: sticky; top: 0; z-index: 100; }
-        .header-content { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-size: 1.25rem; font-weight: 700; }
-        nav { display: flex; gap: 1.5rem; }
-        nav a { color: rgba(255,255,255,0.9); text-decoration: none; font-weight: 500; transition: color 0.2s; }
-        nav a:hover { color: white; }
-        
-        main { max-width: 900px; margin: 0 auto; padding: 2rem; }
-        
-        .back-link { display: inline-block; margin-bottom: 1.5rem; color: var(--secondary); text-decoration: none; font-weight: 500; }
-        .back-link:hover { color: var(--accent); }
-        
-        .volume-header { background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); margin-bottom: 2rem; }
-        .volume-header h1 { color: var(--primary); font-size: 2rem; margin-bottom: 0.5rem; }
-        .volume-header .year { color: var(--gray); font-size: 1.1rem; margin-bottom: 1rem; }
-        
-        .issues-section { margin-top: 2rem; }
-        .issue { background: white; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); margin-bottom: 2rem; overflow: hidden; }
-        .issue-header { background: var(--primary); color: white; padding: 1rem 1.5rem; }
-        .issue-header h2 { font-size: 1.25rem; }
-        
-        .toc { list-style: none; }
-        .toc-item { padding: 1.25rem 1.5rem; border-bottom: 1px solid var(--border); }
-        .toc-item:last-child { border-bottom: none; }
-        .toc-item:hover { background: var(--light); }
-        
-        .article-title { font-weight: 600; color: var(--dark); margin-bottom: 0.25rem; font-size: 1.05rem; }
-        .article-authors { color: var(--gray); font-size: 0.9rem; margin-bottom: 0.5rem; }
-        .article-meta { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; }
-        .article-pages { color: var(--secondary); font-weight: 500; }
-        
-        .download-btn { 
-            display: inline-block; 
-            padding: 0.4rem 1rem; 
-            background: var(--accent); 
-            color: white; 
-            text-decoration: none; 
-            border-radius: 4px; 
-            font-weight: 600; 
-            font-size: 0.85rem;
-            transition: background 0.2s;
-        }
-        .download-btn:hover { background: #9b2c2c; }
-        .download-btn.coming { background: var(--gray); cursor: not-allowed; }
-        
-        .from-editor { background: #fefcbf; padding: 1rem 1.5rem; border-left: 4px solid #d69e2e; }
-        
-        footer { background: var(--dark); color: white; padding: 2rem; text-align: center; margin-top: 3rem; }
-        
-        @media (max-width: 768px) {
-            nav { display: none; }
-        }
-    </style>
+<link rel="stylesheet" href="../site.css"/>
 </head>
-<body>
-<header>
-<div class="header-content">
-<div class="logo"><a href="../index.html" style="color: white; text-decoration: none;">⚖️ Journal of Space Law</a></div>
-<nav>
-<a href="../index.html">Home</a>
+<body class="site-subpage volume-page">
+<header class="site-header">
+<div class="site-header-inner">
+<a class="site-logo" href="../index.html#home">
+<img alt="" class="site-logo-img" height="50" src="../casl-logo-vertical-red-blue.png" width="50"/>
+<div class="site-logo-divider"></div>
+<div class="site-logo-text">
+<span class="site-logo-name">Journal of Space Law</span>
+<span class="site-logo-sub">Center for Air and Space Law at Ole Miss</span>
+</div>
+</a>
+<div class="site-nav-wrap">
+<button type="button" class="site-nav-toggle" id="site-nav-toggle" aria-expanded="false" aria-controls="site-nav-panel" aria-label="Open menu">Menu</button>
+<div class="site-nav-links" id="site-nav-panel">
+<a href="../index.html#home">Home</a>
 <a href="../index.html#about">About</a>
 <a href="../index.html#journal">Journal</a>
-<a href="https://olemiss.edu/airandspacelaw/" target="_blank">Center</a>
-</nav>
+<a class="nav-external" href="https://olemiss.edu/airandspacelaw/" rel="noopener noreferrer" target="_blank">Center ↗</a>
+</div>
+</div>
 </div>
 </header>
 <main>
@@ -93,10 +38,11 @@
 </div>
 <div class="issues-section"><div class="issue"><div class="issue-header"><h2>Issue 1</h2></div><ul class="toc"><li class="toc-item"><div class="article-title"><a href="../articles/v38i1p289.html" style="color: inherit; text-decoration: none;">Small Satellites and Small States: New Incentives for National Space Legislation</a></div><div class="article-authors">Marboe, Irmgard; Traunmuller, Karin</div><div class="article-meta"><span class="article-pages">Pages 289</span><a class="download-btn" download="" href="../pdfs/Journal of Space Law - Individual Articles OCR/Small Satellites and Small States New Incentives for National Space Legislation - Irmgard Marboe Karin Traunmüller - 2012.pdf">📥 Download PDF</a></div></li><li class="toc-item"><div class="article-title"><a href="../articles/v38i1p227.html" style="color: inherit; text-decoration: none;">The GPS-Galileo Agreement and Treaty Law</a></div><div class="article-authors">Dodge, Michael</div><div class="article-meta"><span class="article-pages">Pages 227</span><a class="download-btn" download="" href="../pdfs/Journal of Space Law - Individual Articles OCR/The GPS-Galileo Agreement and Treaty Law - Michael Dodge - 2012.pdf">📥 Download PDF</a></div></li><li class="toc-item"><div class="article-title"><a href="../articles/v38i1p171.html" style="color: inherit; text-decoration: none;">Activities Decree and Rules</a></div><div class="article-authors">Pocar, Fausto</div><div class="article-meta"><span class="article-pages">Pages 171</span><a class="download-btn" download="" href="../pdfs/Journal of Space Law - Individual Articles OCR/Activities Decree and Rules - Pocar, Fausto - 2012.pdf">📥 Download PDF</a></div></li><li class="toc-item"><div class="article-title"><a href="../articles/v38i1p151.html" style="color: inherit; text-decoration: none;">The Mexican Space Agency Decree and Rules</a></div><div class="article-authors">Villalobos, J. H. Castro</div><div class="article-meta"><span class="article-pages">Pages 151</span><a class="download-btn" download="" href="../pdfs/Journal of Space Law - Individual Articles OCR/The Mexican Space Agency Decree and Rules - Villalobos, J. H. Castro - 2012.pdf">📥 Download PDF</a></div></li><li class="toc-item"><div class="article-title"><a href="../articles/v38i1p39.html" style="color: inherit; text-decoration: none;">Rights over Areas vs Resources in Outer Space</a></div><div class="article-authors">De Man, Philip</div><div class="article-meta"><span class="article-pages">Pages 39</span><a class="download-btn" download="" href="../pdfs/Journal of Space Law - Individual Articles OCR/Rights over Areas vs Resources in Outer Space - De Man, Philip - 2012.pdf">📥 Download PDF</a></div></li><li class="toc-item"><div class="article-title"><a href="../articles/v38i1p1.html" style="color: inherit; text-decoration: none;">A Legal Assessment of the 1996 Declaration on Space Benefits</a></div><div class="article-authors">Carpanelli, Elena; Cohen, Brendan</div><div class="article-meta"><span class="article-pages">Pages 1</span><a class="download-btn" download="" href="../pdfs/Journal of Space Law - Individual Articles OCR/A Legal Assessment of the 1996 Declaration on Space Benefits - Carpanelli, Elena - 2012.pdf">📥 Download PDF</a></div></li><li class="toc-item"><div class="article-title">Carl Quimby Christol, 1913-2012 In Memoriam</div><div class="article-authors">Gabrynowicz, Joanne Irene</div><div class="article-meta"><span class="article-pages">Pages iii</span><span class="download-btn coming">📥 Coming Soon</span></div></li></ul></div></div>
 </main>
-<footer>
+<footer class="site-footer">
 <p>© 2026 Journal of Space Law. All rights reserved.</p>
-<p>Published by the <a href="https://olemiss.edu/airandspacelaw/" style="color: white;" target="_blank">Center for Air and Space Law</a> at the University of Mississippi School of Law.</p>
+<p>Published by the <a href="https://olemiss.edu/airandspacelaw/" rel="noopener noreferrer" target="_blank">Center for Air and Space Law</a> at the University of Mississippi School of Law.</p>
 </footer>
+<script src="../article.js"></script>
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         document.querySelectorAll('a.download-btn[href$=".pdf"]').forEach(function (link) {

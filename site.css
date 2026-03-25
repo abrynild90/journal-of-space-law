@@ -1,0 +1,414 @@
+/* Journal of Space Law — shared styles for article & volume subpages (aligned with index.html) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+    --primary:     #0f2744;
+    --primary-mid: #1a3a5c;
+    --secondary:   #1d4ed8;
+    --accent:      #c0392b;
+    --accent-dk:   #9b2335;
+    --light:       #f8fafc;
+    --white:       #ffffff;
+    --dark:        #0f172a;
+    --gray:        #64748b;
+    --gray-lt:     #94a3b8;
+    --border:      #e2e8f0;
+    --border-dk:   #cbd5e1;
+    --shadow-sm:   0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.04);
+    --shadow-md:   0 4px 12px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0,0.04);
+    --radius:      10px;
+}
+
+body.site-subpage {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    line-height: 1.65;
+    color: var(--dark);
+    background: var(--light);
+    -webkit-font-smoothing: antialiased;
+}
+
+/* —— Header (matches index) —— */
+.site-header {
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: var(--shadow-sm);
+}
+
+.site-header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 68px;
+    position: relative;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.site-nav-wrap {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    position: relative;
+}
+
+.site-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+    color: inherit;
+}
+
+.site-logo-img {
+    height: 50px;
+    width: auto;
+    display: block;
+    flex-shrink: 0;
+}
+
+.site-logo-divider {
+    width: 1px;
+    height: 28px;
+    background: var(--border-dk);
+}
+
+.site-logo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+}
+
+.site-logo-name {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--primary);
+    letter-spacing: -0.3px;
+}
+
+.site-logo-sub {
+    font-size: 0.68rem;
+    color: var(--gray);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+}
+
+.site-nav-toggle {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 0.45rem 0.75rem;
+    border: 1px solid var(--border-dk);
+    border-radius: 6px;
+    background: var(--white);
+    font-family: inherit;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--primary);
+    cursor: pointer;
+}
+
+.site-nav-toggle:hover {
+    background: var(--light);
+}
+
+.site-nav-links {
+    display: flex;
+    gap: 0.15rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.site-nav-links a {
+    color: var(--gray);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+    padding: 0.45rem 0.85rem;
+    border-radius: 6px;
+    transition: background 0.15s, color 0.15s;
+}
+
+.site-nav-links a:hover {
+    color: var(--primary);
+    background: var(--light);
+}
+
+.site-nav-links a.nav-external {
+    border: 1px solid var(--border-dk);
+    color: var(--dark);
+    margin-left: 0.35rem;
+}
+
+.site-nav-links a.nav-external:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+@media (max-width: 700px) {
+    .site-header-inner { padding: 0 1.25rem; }
+    .site-nav-wrap { width: 100%; justify-content: flex-end; flex-wrap: wrap; }
+    .site-nav-toggle { display: flex; }
+    .site-nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 0.75rem 1.25rem 1rem;
+        background: var(--white);
+        border-bottom: 1px solid var(--border);
+        box-shadow: var(--shadow-md);
+        gap: 0.25rem;
+        z-index: 99;
+    }
+    .site-nav-links.is-open { display: flex; }
+    .site-nav-links a { margin-left: 0 !important; }
+}
+
+/* —— Article page —— */
+body.article-page main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.article-back-link,
+main a.back-link {
+    display: inline-block;
+    margin-bottom: 1.5rem;
+    color: var(--secondary);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.article-back-link:hover,
+main a.back-link:hover {
+    color: var(--accent);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.article-card {
+    background: var(--white);
+    padding: 2.5rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border);
+}
+
+.article-journal-badge,
+a.journal-badge {
+    display: inline-block;
+    background: var(--primary);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    text-decoration: none;
+}
+
+.article-journal-badge:hover,
+a.journal-badge:hover {
+    background: var(--primary-mid);
+}
+
+.article-title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 1rem;
+    line-height: 1.3;
+}
+
+.article-authors {
+    font-size: 1rem;
+    color: var(--primary-mid);
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+}
+
+.article-meta {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    padding: 1rem 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 1.5rem;
+}
+
+.meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.meta-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--gray);
+    font-weight: 600;
+}
+
+.meta-value {
+    font-size: 0.95rem;
+    color: var(--dark);
+    font-weight: 500;
+}
+
+.download-btn {
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    background: var(--accent);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: background 0.2s;
+    cursor: pointer;
+    border: none;
+    font-family: inherit;
+}
+
+.download-btn:hover {
+    background: var(--accent-dk);
+}
+
+.site-footer {
+    background: var(--dark);
+    color: rgba(255,255,255,0.85);
+    padding: 2rem;
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.site-footer a {
+    color: rgba(255,255,255,0.9);
+}
+
+/* —— Volume page —— */
+body.volume-page main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.volume-header {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border);
+    margin-bottom: 2rem;
+}
+
+.volume-header h1 {
+    color: var(--primary);
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.volume-header .year {
+    color: var(--gray);
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+.issues-section { margin-top: 2rem; }
+
+.issue {
+    background: var(--white);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border);
+    margin-bottom: 2rem;
+    overflow: hidden;
+}
+
+.issue-header {
+    background: var(--primary);
+    color: white;
+    padding: 1rem 1.5rem;
+}
+
+.issue-header h2 { font-size: 1.25rem; }
+
+.toc { list-style: none; }
+
+.toc-item {
+    padding: 1.25rem 1.5rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.toc-item:last-child { border-bottom: none; }
+
+.toc-item:hover { background: var(--light); }
+
+.toc-item .article-title {
+    font-weight: 600;
+    color: var(--dark);
+    margin-bottom: 0.25rem;
+    font-size: 1.05rem;
+}
+
+.toc-item .article-title a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.toc-item .article-title a:hover {
+    color: var(--secondary);
+    text-decoration: underline;
+}
+
+.toc-item .article-authors {
+    color: var(--gray);
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.toc-item .article-meta {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    flex-wrap: wrap;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+.article-pages { color: var(--primary-mid); font-weight: 500; }
+
+.volume-page .download-btn {
+    display: inline-block;
+    padding: 0.4rem 1rem;
+    font-size: 0.85rem;
+    border-radius: 6px;
+}
+
+.volume-page .download-btn.coming {
+    background: var(--gray);
+    cursor: not-allowed;
+}
+
+.from-editor {
+    background: #fefcbf;
+    padding: 1rem 1.5rem;
+    border-left: 4px solid #d69e2e;
+}

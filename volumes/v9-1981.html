@@ -5,83 +5,28 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Volume 9 (1981) | Journal of Space Law</title>
-<style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        :root {
-            --primary: #1a365d;
-            --secondary: #2c5282;
-            --accent: #c53030;
-            --light: #f7fafc;
-            --dark: #1a202c;
-            --gray: #718096;
-            --border: #e2e8f0;
-        }
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: var(--dark); background: var(--light); }
-        
-        header { background: var(--primary); color: white; padding: 1rem 2rem; position: sticky; top: 0; z-index: 100; }
-        .header-content { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-size: 1.25rem; font-weight: 700; }
-        nav { display: flex; gap: 1.5rem; }
-        nav a { color: rgba(255,255,255,0.9); text-decoration: none; font-weight: 500; transition: color 0.2s; }
-        nav a:hover { color: white; }
-        
-        main { max-width: 900px; margin: 0 auto; padding: 2rem; }
-        
-        .back-link { display: inline-block; margin-bottom: 1.5rem; color: var(--secondary); text-decoration: none; font-weight: 500; }
-        .back-link:hover { color: var(--accent); }
-        
-        .volume-header { background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); margin-bottom: 2rem; }
-        .volume-header h1 { color: var(--primary); font-size: 2rem; margin-bottom: 0.5rem; }
-        .volume-header .year { color: var(--gray); font-size: 1.1rem; margin-bottom: 1rem; }
-        
-        .issues-section { margin-top: 2rem; }
-        .issue { background: white; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); margin-bottom: 2rem; overflow: hidden; }
-        .issue-header { background: var(--primary); color: white; padding: 1rem 1.5rem; }
-        .issue-header h2 { font-size: 1.25rem; }
-        
-        .toc { list-style: none; }
-        .toc-item { padding: 1.25rem 1.5rem; border-bottom: 1px solid var(--border); }
-        .toc-item:last-child { border-bottom: none; }
-        .toc-item:hover { background: var(--light); }
-        
-        .article-title { font-weight: 600; color: var(--dark); margin-bottom: 0.25rem; font-size: 1.05rem; }
-        .article-authors { color: var(--gray); font-size: 0.9rem; margin-bottom: 0.5rem; }
-        .article-meta { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; }
-        .article-pages { color: var(--secondary); font-weight: 500; }
-        
-        .download-btn { 
-            display: inline-block; 
-            padding: 0.4rem 1rem; 
-            background: var(--accent); 
-            color: white; 
-            text-decoration: none; 
-            border-radius: 4px; 
-            font-weight: 600; 
-            font-size: 0.85rem;
-            transition: background 0.2s;
-        }
-        .download-btn:hover { background: #9b2c2c; }
-        .download-btn.coming { background: var(--gray); cursor: not-allowed; }
-        
-        .from-editor { background: #fefcbf; padding: 1rem 1.5rem; border-left: 4px solid #d69e2e; }
-        
-        footer { background: var(--dark); color: white; padding: 2rem; text-align: center; margin-top: 3rem; }
-        
-        @media (max-width: 768px) {
-            nav { display: none; }
-        }
-    </style>
+<link rel="stylesheet" href="../site.css"/>
 </head>
-<body>
-<header>
-<div class="header-content">
-<div class="logo"><a href="../index.html" style="color: white; text-decoration: none;">⚖️ Journal of Space Law</a></div>
-<nav>
-<a href="../index.html">Home</a>
+<body class="site-subpage volume-page">
+<header class="site-header">
+<div class="site-header-inner">
+<a class="site-logo" href="../index.html#home">
+<img alt="" class="site-logo-img" height="50" src="../casl-logo-vertical-red-blue.png" width="50"/>
+<div class="site-logo-divider"></div>
+<div class="site-logo-text">
+<span class="site-logo-name">Journal of Space Law</span>
+<span class="site-logo-sub">Center for Air and Space Law at Ole Miss</span>
+</div>
+</a>
+<div class="site-nav-wrap">
+<button type="button" class="site-nav-toggle" id="site-nav-toggle" aria-expanded="false" aria-controls="site-nav-panel" aria-label="Open menu">Menu</button>
+<div class="site-nav-links" id="site-nav-panel">
+<a href="../index.html#home">Home</a>
 <a href="../index.html#about">About</a>
 <a href="../index.html#journal">Journal</a>
-<a href="https://olemiss.edu/airandspacelaw/" target="_blank">Center</a>
-</nav>
+<a class="nav-external" href="https://olemiss.edu/airandspacelaw/" rel="noopener noreferrer" target="_blank">Center ↗</a>
+</div>
+</div>
 </div>
 </header>
 <main>
@@ -93,10 +38,11 @@
 </div>
 <div class="issues-section"><div class="issue"><div class="issue-header"><h2>Issue 1</h2></div><ul class="toc"><li class="toc-item"><div class="article-title"><a href="../articles/v9i1p105.html" style="color: inherit; text-decoration: none;">Significant Developments in SPace Law A Projection for the Next Decade</a></div><div class="article-authors">Doyle, Stephen E.</div><div class="article-meta"><span class="article-pages">Pages 105</span><a class="download-btn" download="" href="../pdfs/Journal of Space Law - Individual Articles OCR/Significant Developments in SPace Law A Projection for the Next Decade - Stephen E. Doyle - 1981.pdf">📥 Download PDF</a></div></li><li class="toc-item"><div class="article-title"><a href="../articles/v9i1p93.html" style="color: inherit; text-decoration: none;">Some Reflections on the State of the Law of Outer Space</a></div><div class="article-authors">DeSaussure, Hamilton</div><div class="article-meta"><span class="article-pages">Pages 93</span><a class="download-btn" download="" href="../pdfs/Journal of Space Law - Individual Articles OCR/Some Reflections on the State of the Law of Outer Space - Manfred Lachs - 1981.pdf">📥 Download PDF</a></div></li><li class="toc-item"><div class="article-title"><a href="../articles/v9i1p77.html" style="color: inherit; text-decoration: none;">Treaty The Search for a Position</a></div><div class="article-authors">Christol, Carl Q.</div><div class="article-meta"><span class="article-pages">Pages 77</span><a class="download-btn" download="" href="../pdfs/Journal of Space Law - Individual Articles OCR/Treaty The Search for a Position - Christol, Carl Q. - 1981.pdf">📥 Download PDF</a></div></li><li class="toc-item"><div class="article-title"><a href="../articles/v9i1p53.html" style="color: inherit; text-decoration: none;">Commercial Participation in Space Activities</a></div><div class="article-authors">Menter, Martin</div><div class="article-meta"><span class="article-pages">Pages 53</span><a class="download-btn" download="" href="../pdfs/Journal of Space Law - Individual Articles OCR/Commercial Participation in Space Activities - Martin Menter - 1981.pdf">📥 Download PDF</a></div></li><li class="toc-item"><div class="article-title"><a href="../articles/v9i1p31.html" style="color: inherit; text-decoration: none;">of Interrelations</a></div><div class="article-authors">Vereschetin, V. S.</div><div class="article-meta"><span class="article-pages">Pages 31</span><a class="download-btn" download="" href="../pdfs/Journal of Space Law - Individual Articles OCR/of Interrelations - Vereschetin, V. S. - 1981.pdf">📥 Download PDF</a></div></li><li class="toc-item"><div class="article-title"><a href="../articles/v9i1p21.html" style="color: inherit; text-decoration: none;">Perspecltves ofS Pace Law</a></div><div class="article-authors">Galloway, Eilene</div><div class="article-meta"><span class="article-pages">Pages 21</span><a class="download-btn" download="" href="../pdfs/Journal of Space Law - Individual Articles OCR/Perspecltves ofS Pace Law - Eilene Galloway - 1981.pdf">📥 Download PDF</a></div></li></ul></div></div>
 </main>
-<footer>
+<footer class="site-footer">
 <p>© 2026 Journal of Space Law. All rights reserved.</p>
-<p>Published by the <a href="https://olemiss.edu/airandspacelaw/" style="color: white;" target="_blank">Center for Air and Space Law</a> at the University of Mississippi School of Law.</p>
+<p>Published by the <a href="https://olemiss.edu/airandspacelaw/" rel="noopener noreferrer" target="_blank">Center for Air and Space Law</a> at the University of Mississippi School of Law.</p>
 </footer>
+<script src="../article.js"></script>
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         document.querySelectorAll('a.download-btn[href$=".pdf"]').forEach(function (link) {

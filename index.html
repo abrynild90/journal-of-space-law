@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Journal of Space Law | Discover Space Law Insights Today</title>
+<title>Journal of Space Law | University of Mississippi School of Law</title>
 <!-- Google Scholar / Open Access metadata -->
 <meta content="Journal of Space Law" name="citation_journal_title"/>
 <meta content="University of Mississippi School of Law" name="citation_publisher"/>
@@ -17,6 +17,14 @@
 <meta content="Journal of Space Law" property="og:title"/>
 <meta content="The leading academic journal dedicated to space law, published by the University of Mississippi School of Law since 1973." property="og:description"/>
 <meta content="website" property="og:type"/>
+<link href="https://journalofspacelaw.org/" rel="canonical"/>
+<meta content="https://journalofspacelaw.org/" property="og:url"/>
+<meta content="https://journalofspacelaw.org/casl-logo-horizontal-red-blue.png" property="og:image"/>
+<meta content="Journal of Space Law" property="og:image:alt"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Journal of Space Law" name="twitter:title"/>
+<meta content="The leading academic journal dedicated to space law, published by the University of Mississippi School of Law since 1973." name="twitter:description"/>
+<meta content="https://journalofspacelaw.org/casl-logo-horizontal-red-blue.png" name="twitter:image"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
 <style>
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -38,6 +46,24 @@
             --shadow-md:   0 4px 12px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0,0.04);
             --shadow-lg:   0 10px 30px rgba(0,0,0,0.10), 0 4px 8px rgba(0,0,0,0.06);
             --radius:      10px;
+        }
+
+        .skip-link {
+            position: absolute;
+            left: -9999px;
+            z-index: 1000;
+            padding: 0.75rem 1.25rem;
+            background: var(--accent);
+            color: white;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 0 0 8px 0;
+        }
+        .skip-link:focus {
+            left: 0;
+            top: 0;
+            outline: 2px solid var(--secondary);
+            outline-offset: 2px;
         }
 
         body {
@@ -71,6 +97,7 @@
             align-items: center;
             gap: 0.75rem;
             text-decoration: none;
+            color: inherit;
             cursor: pointer;
         }
         .logo-img {
@@ -215,7 +242,19 @@
         }
 
         /* ── MAIN / SECTIONS ── */
-        main {
+        #main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0;
+        }
+        #main-content:focus {
+            outline: none;
+        }
+        #main-content:focus-visible {
+            outline: 3px solid rgba(29, 78, 216, 0.45);
+            outline-offset: 2px;
+        }
+        #main-content .page-inner {
             max-width: 1200px;
             margin: 0 auto;
             padding: 4rem 2rem;
@@ -570,6 +609,16 @@
             color: var(--gray-lt);
             text-align: center;
         }
+        .chat-privacy {
+            margin-top: 0.75rem;
+            font-size: 0.75rem;
+            color: var(--gray-lt);
+            text-align: center;
+            max-width: 520px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.5;
+        }
 
         /* ── COLLAPSIBLE VOLUMES ── */
         .vol-block-header {
@@ -636,10 +685,43 @@
         @media (max-width: 900px) {
             .about-content { grid-template-columns: 1fr; }
         }
+        .nav-menu-toggle {
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 0.45rem 0.75rem;
+            border: 1px solid var(--border-dk);
+            border-radius: 6px;
+            background: var(--white);
+            font-family: inherit;
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: var(--primary);
+            cursor: pointer;
+        }
+        .nav-menu-toggle:hover { background: var(--light); }
+        .nav-desktop { display: flex; gap: 0.15rem; align-items: center; flex-wrap: wrap; }
         @media (max-width: 700px) {
-            .header-content { padding: 0 1.25rem; }
-            nav a:not(.nav-external):not(.nav-chat-link) { display: none; }
-            main { padding: 2.5rem 1.25rem; }
+            .header-content { padding: 0 1.25rem; position: relative; }
+            .nav-menu-toggle { display: flex; }
+            .nav-desktop {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                flex-direction: column;
+                align-items: stretch;
+                padding: 0.75rem 1.25rem 1rem;
+                background: var(--white);
+                border-bottom: 1px solid var(--border);
+                box-shadow: var(--shadow-md);
+                gap: 0.25rem;
+                z-index: 99;
+            }
+            .nav-desktop.is-open { display: flex; }
+            .nav-desktop a { margin-left: 0 !important; }
+            #main-content .page-inner { padding: 2.5rem 1.25rem; }
             .hero { padding: 4rem 1.25rem 3.5rem; }
             .hero h1 { font-size: 2rem; }
             .vol-block-header { padding: 0.8rem 1rem; }
@@ -650,47 +732,50 @@
     </style>
 </head>
 <body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
 <header>
 <div class="header-content">
-<div class="logo" onclick="showPage('home')">
+<a class="logo" href="#home" id="logo-home">
 <img alt="Center for Air and Space Law" class="logo-img" src="casl-logo-vertical-red-blue.png"/>
 <div class="logo-divider"></div>
 <div class="logo-label">
 <span class="journal-name">Journal of Space Law</span>
 <span class="journal-sub">Center for Air and Space Law at Ole Miss</span>
 </div>
-</div>
-<nav>
-<a class="active" href="javascript:void(0)" id="nav-home" onclick="showPage('home'); return false;">Home</a>
-<a href="javascript:void(0)" id="nav-about" onclick="showPage('about'); return false;">About</a>
-<a href="javascript:void(0)" id="nav-journal" onclick="showPage('journal'); return false;">Journal</a>
-<a href="javascript:void(0)" id="nav-contact" onclick="showPage('contact'); return false;">Contact</a>
-<a class="nav-chat-link" href="javascript:void(0)" id="nav-chat" onclick="showPage('chat'); return false;">Chat</a>
-<a class="nav-external" href="https://olemiss.edu/airandspacelaw/" target="_blank">Center ↗</a>
+</a>
+<button type="button" class="nav-menu-toggle" id="nav-menu-toggle" aria-expanded="false" aria-controls="nav-desktop" aria-label="Open menu">Menu</button>
+<nav aria-label="Main" class="nav-desktop" id="nav-desktop">
+<a class="active" href="#home" id="nav-home">Home</a>
+<a href="#about" id="nav-about">About</a>
+<a href="#journal" id="nav-journal">Journal</a>
+<a href="#contact" id="nav-contact">Contact</a>
+<a class="nav-chat-link" href="#chat" id="nav-chat">Chat</a>
+<a class="nav-external" href="https://olemiss.edu/airandspacelaw/" rel="noopener noreferrer" target="_blank">Center ↗</a>
 </nav>
 </div>
 </header>
+<main id="main-content" tabindex="-1">
 <!-- Home Page -->
-<div class="page-content active" id="home">
+<div aria-hidden="false" class="page-content active" id="home">
 <section class="hero">
 <div class="hero-inner">
 <div class="hero-eyebrow">Est. 1973 · University of Mississippi School of Law</div>
 <h1>Journal of Space Law</h1>
 <p>The oldest publication dedicated to legal issues in outer space. Published by the University of Mississippi's Center for Air and Space Law, covering international treaties, commercial space activities, and emerging legal challenges in space exploration.</p>
 <div class="hero-actions">
-<a class="btn" href="javascript:void(0)" onclick="showPage('journal'); return false;">Browse Journal Issues</a>
-<a class="btn btn-outline" href="javascript:void(0)" onclick="showPage('about'); return false;">Learn More</a>
+<a class="btn" href="#journal">Browse Journal Issues</a>
+<a class="btn btn-outline" href="#about">Learn More</a>
 </div>
 </div>
 </section>
-<main>
+<div class="page-inner">
 <section class="section">
 <div class="about-content">
 <div class="about-text">
 <h2 class="section-title">The World's Oldest Space Law Journal</h2>
 <p>Founded in 1973 by Professor Stephen Gorove, the <em>Journal of Space Law</em> is the oldest and most respected scholarly publication dedicated exclusively to legal issues in outer space.</p>
 <p>Published by the University of Mississippi's Center for Air and Space Law, the Journal covers international treaties, commercial space activities, national space legislation, and the emerging legal challenges of the new space age.</p>
-<p>Today, under the leadership of Executive Director and Professor Michelle Hanlon, the Journal continues to serve as the premier forum for space law scholarship. <a href="javascript:void(0)" onclick="showPage('about'); return false;" style="color:var(--secondary);">Learn more →</a></p>
+<p>Today, under the leadership of Executive Director and Professor Michelle Hanlon, the Journal continues to serve as the premier forum for space law scholarship. <a href="#about" style="color:var(--secondary);">Learn more →</a></p>
 </div>
 <div class="about-stats">
 <div class="stat-card">
@@ -712,11 +797,11 @@
 </div>
 </div>
 </section>
-</main>
+</div>
 </div>
 <!-- About Page -->
-<div class="page-content" id="about">
-<main>
+<div aria-hidden="true" class="page-content" id="about">
+<div class="page-inner">
 <section class="section">
 <h2 class="section-title">About the Journal</h2>
 <div class="about-text">
@@ -754,11 +839,11 @@
 </div>
 </div>
 </section>
-</main>
+</div>
 </div>
 <!-- Journal Page -->
-<div class="page-content" id="journal">
-<main>
+<div aria-hidden="true" class="page-content" id="journal">
+<div class="page-inner">
 <section class="section">
 <h2 class="section-title">Journal Archive</h2>
 <p style="margin-bottom:2rem;">Explore 47 volumes of space law scholarship, dating back to Volume 1 in 1973. Published by the University of Mississippi School of Law.</p>
@@ -1354,11 +1439,11 @@
 </div>
 </div>
 </section>
-</main>
+</div>
 </div>
 <!-- Contact Page -->
-<div class="page-content" id="contact">
-<main>
+<div aria-hidden="true" class="page-content" id="contact">
+<div class="page-inner">
 <section class="section">
 <h2 class="section-title">Contact Us</h2>
 <p style="margin-bottom: 2rem;">If you have questions about the Journal of Space Law or want to get involved, please contact us using the form below:</p>
@@ -1383,13 +1468,14 @@
 <button class="btn-submit" type="submit">Send Message</button>
 <p id="form-status" style="margin-top:1rem; font-size:0.88rem; color:var(--gray); display:none;"></p>
 </form>
-<p style="margin-top:1.25rem; font-size:0.85rem; color:var(--gray);">You may also reach us directly at <a href="mailto:spacelaw@olemiss.edu" style="color:var(--secondary);">spacelaw@olemiss.edu</a>.</p>
+<p style="margin-top:1.25rem; font-size:0.85rem; color:var(--gray);">You may also reach us directly at <a href="mailto:spacelaw@olemiss.edu" style="color:var(--secondary);">spacelaw@olemiss.edu</a>. If your email app does not open, copy the address or use the button below.</p>
+<p style="margin-top:0.75rem;"><button type="button" class="btn-submit" id="copy-email-btn" style="background:var(--secondary);">Copy email address</button> <span id="copy-email-status" style="font-size:0.85rem; color:var(--gray); margin-left:0.5rem;"></span></p>
 </div>
 </section>
-</main>
+</div>
 </div>
 <!-- Chat Page -->
-<div class="page-content" id="chat">
+<div aria-hidden="true" class="page-content" id="chat">
 <div class="chat-page">
 <div class="chat-intro">
 <h2 class="section-title">Ask the Space Law Assistant</h2>
@@ -1399,25 +1485,27 @@
 <div id="jsl-chat"></div>
 <script data-api-url="https://api-spacejournal.vercel.app/api/chat" src="https://widget-one-beta.vercel.app/chat-widget.js">
 </script>
+<p class="chat-privacy">The chat tool loads a script from a third-party host and sends your messages to our API for a response. Do not submit sensitive personal information.</p>
 <p class="chat-disclaimer">This assistant is for educational purposes only. All responses should be independently verified for accuracy.</p>
 </div>
 </div>
+</main>
 <footer>
 <div class="footer-main">
 <p>© 2026 Journal of Space Law. All rights reserved.</p>
 <p>ISSN 0095-7577 · University of Mississippi School of Law</p>
 <nav class="footer-links">
-<a href="javascript:void(0)" onclick="showPage('home'); return false;">Home</a>
-<a href="javascript:void(0)" onclick="showPage('about'); return false;">About</a>
-<a href="javascript:void(0)" onclick="showPage('journal'); return false;">Journal Archive</a>
-<a href="javascript:void(0)" onclick="showPage('contact'); return false;">Contact</a>
-<a href="javascript:void(0)" onclick="showPage('chat'); return false;">Chat</a>
-<a href="https://olemiss.edu/airandspacelaw/" target="_blank">Center for Air &amp; Space Law ↗</a>
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#journal">Journal Archive</a>
+<a href="#contact">Contact</a>
+<a href="#chat">Chat</a>
+<a href="https://olemiss.edu/airandspacelaw/" rel="noopener noreferrer" target="_blank">Center for Air &amp; Space Law ↗</a>
 </nav>
 </div>
 <div class="footer-publisher">
 <span>Published by</span>
-<a href="https://olemiss.edu/airandspacelaw/" target="_blank">
+<a href="https://olemiss.edu/airandspacelaw/" rel="noopener noreferrer" target="_blank">
 <img alt="Center for Air and Space Law" src="casl-logo-horizontal-red-blue.png"/>
 </a>
 </div>
@@ -1428,35 +1516,119 @@
         "10-1": "articles/v10i1p1.html", "10-107": "articles/v10i1p107.html", "10-13": "articles/v10i1p13.html", "10-139": "articles/v10i1p139.html", "10-165": "articles/v10i2p165.html", "10-31": "articles/v10i2p31.html", "11-107": "articles/v11i1p107.html", "11-115": "articles/v11i1p115.html", "11-15": "articles/v11i1p15.html", "11-21": "articles/v11i2p21.html", "11-27": "articles/v11i2p27.html", "11-35": "articles/v11i2p35.html", "11-61": "articles/v11i2p61.html", "11-67": "articles/v11i2p67.html", "11-73": "articles/v11i2p73.html", "11-83": "articles/v11i2p83.html", "11-89": "articles/v11i2p89.html", "12-1": "articles/v12i1p1.html", "12-109": "articles/v12i1p109.html", "12-12": "articles/v12i1p12.html", "12-163": "articles/v12i1p163.html", "12-26": "articles/v12i2p26.html", "12-40": "articles/v12i2p40.html", "13-1": "articles/v13i1p1.html", "13-103": "articles/v13i1p103.html", "13-157": "articles/v13i1p157.html", "13-8": "articles/v13i2p8.html", "14-1": "articles/v14i1p1.html", "14-113": "articles/v14i1p113.html", "14-140": "articles/v14i1p140.html", "14-95": "articles/v14i1p95.html", "15-101": "articles/v15i1p101.html", "15-147": "articles/v15i1p147.html", "15-25": "articles/v15i1p25.html", "15-35": "articles/v15i1p35.html", "16-1": "articles/v16i1p1.html", "16-117": "articles/v16i1p117.html", "16-147": "articles/v16i1p147.html", "16-21": "articles/v16i2p21.html", "16-5": "articles/v16i2p5.html", "17-103": "articles/v17i1p103.html", "17-115": "articles/v17i1p115.html", "17-129": "articles/v17i1p129.html", "17-13": "articles/v17i1p13.html", "17-23": "articles/v17i2p23.html", "18-1": "articles/v18i1p1.html", "18-113": "articles/v18i1p113.html", "18-123": "articles/v18i1p123.html", "18-19": "articles/v18i1p19.html", "18-99": "articles/v18i1p99.html", "19-1": "articles/v19i1p1.html", "19-103": "articles/v19i1p103.html", "19-123": "articles/v19i1p123.html", "1-105": "articles/v1i1p105.html", "1-113": "articles/v1i1p113.html", "1-139": "articles/v1i1p139.html", "1-201": "articles/v1i2p201.html", "1-64": "articles/v1i2p64.html", "1-72": "articles/v1i2p72.html", "1-80": "articles/v1i2p80.html", "20-111": "articles/v20i1p111.html", "20-117": "articles/v20i1p117.html", "20-27": "articles/v20i1p27.html", "21-1": "articles/v21i1p1.html", "21-11": "articles/v21i1p11.html", "21-123": "articles/v21i1p123.html", "21-97": "articles/v21i1p97.html", "22-33": "articles/v22i1p33.html", "22-57": "articles/v22i1p57.html", "22-75": "articles/v22i1p75.html", "22-97": "articles/v22i1p97.html", "23-121": "articles/v23i1p121.html", "23-123": "articles/v23i1p123.html", "24-1": "articles/v24i1p1.html", "24-97": "articles/v24i1p97.html", "25-1": "articles/v25i1p1.html", "25-17": "articles/v25i1p17.html", "25-93": "articles/v25i1p93.html", "26-111": "articles/v26i1p111.html", "26-139": "articles/v26i1p139.html", "26-187": "articles/v26i1p187.html", "26-51": "articles/v26i2p51.html", "26-99": "articles/v26i2p99.html", "27-99": "articles/v27i1p99.html", "28-101": "articles/v28i1p101.html", "28-11": "articles/v28i1p11.html", "29-1": "articles/v29i1p1.html", "29-121": "articles/v29i1p121.html", "29-185": "articles/v29i1p185.html", "29-21": "articles/v29i1p21.html", "29-31": "articles/v29i1p31.html", "29-65": "articles/v29i1p65.html", "2-1": "articles/v2i1p1.html", "2-107": "articles/v2i1p107.html", "2-19": "articles/v2i1p19.html", "2-27": "articles/v2i1p27.html", "2-83": "articles/v2i1p83.html", "30-1": "articles/v30i1p1.html", "30-129": "articles/v30i1p129.html", "30-13": "articles/v30i1p13.html", "30-169": "articles/v30i1p169.html", "30-203": "articles/v30i1p203.html", "30-227": "articles/v30i1p227.html", "30-234": "articles/v30i1p234.html", "30-241": "articles/v30i1p241.html", "30-251": "articles/v30i1p251.html", "30-277": "articles/v30i2p277.html", "30-297": "articles/v30i2p297.html", "30-311": "articles/v30i2p311.html", "31-1": "articles/v31i1p1.html", "31-117": "articles/v31i1p117.html", "31-165": "articles/v31i1p165.html", "31-219": "articles/v31i1p219.html", "31-243": "articles/v31i1p243.html", "31-287": "articles/v31i1p287.html", "31-339": "articles/v31i1p339.html", "31-423": "articles/v31i1p423.html", "31-447": "articles/v31i1p447.html", "31-467": "articles/v31i1p467.html", "32-1": "articles/v32i1p1.html", "32-111": "articles/v32i1p111.html", "32-147": "articles/v32i1p147.html", "32-177": "articles/v32i1p177.html", "32-203": "articles/v32i1p203.html", "32-217": "articles/v32i1p217.html", "32-253": "articles/v32i1p253.html", "32-293": "articles/v32i1p293.html", "32-319": "articles/v32i2p319.html", "32-361": "articles/v32i2p361.html", "33-1": "articles/v33i1p1.html", "33-123": "articles/v33i1p123.html", "33-195": "articles/v33i1p195.html", "33-221": "articles/v33i1p221.html", "33-245": "articles/v33i2p245.html", "33-299": "articles/v33i2p299.html", "33-341": "articles/v33i2p341.html", "33-359": "articles/v33i2p359.html", "33-405": "articles/v33i2p405.html", "33-437": "articles/v33i2p437.html", "33-459": "articles/v33i2p459.html", "34-11": "articles/v34i1p11.html", "34-163": "articles/v34i1p163.html", "34-19": "articles/v34i1p19.html", "34-203": "articles/v34i1p203.html", "34-221": "articles/v34i1p221.html", "34-241": "articles/v34i1p241.html", "34-33": "articles/v34i1p33.html", "34-357": "articles/v34i1p357.html", "34-411": "articles/v34i2p411.html", "34-435": "articles/v34i2p435.html", "34-45": "articles/v34i2p45.html", "34-471": "articles/v34i2p471.html", "34-487": "articles/v34i2p487.html", "34-497": "articles/v34i2p497.html", "34-67": "articles/v34i2p67.html", "34-97": "articles/v34i2p97.html", "35-1": "articles/v35i1p1.html", "35-201": "articles/v35i1p201.html", "35-291": "articles/v35i1p291.html", "35-313": "articles/v35i1p313.html", "35-37": "articles/v35i1p37.html", "35-471": "articles/v35i1p471.html", "35-5": "articles/v35i1p5.html", "35-539": "articles/v35i1p539.html", "35-559": "articles/v35i1p559.html", "35-615": "articles/v35i1p615.html", "35-75": "articles/v35i1p75.html", "36-1": "articles/v36i1p1.html", "36-115": "articles/v36i1p115.html", "36-143": "articles/v36i1p143.html", "36-207": "articles/v36i1p207.html", "36-335": "articles/v36i1p335.html", "36-365": "articles/v36i1p365.html", "36-381": "articles/v36i1p381.html", "36-415": "articles/v36i1p415.html", "36-435": "articles/v36i1p435.html", "36-459": "articles/v36i2p459.html", "36-489": "articles/v36i2p489.html", "36-525": "articles/v36i2p525.html", "36-55": "articles/v36i2p55.html", "36-567": "articles/v36i2p567.html", "36-579": "articles/v36i2p579.html", "36-87": "articles/v36i2p87.html", "37-1": "articles/v37i1p1.html", "37-277": "articles/v37i1p277.html", "37-279": "articles/v37i1p279.html", "37-299": "articles/v37i1p299.html", "38-1": "articles/v38i1p1.html", "38-151": "articles/v38i1p151.html", "38-171": "articles/v38i1p171.html", "38-227": "articles/v38i1p227.html", "38-289": "articles/v38i1p289.html", "38-39": "articles/v38i1p39.html", "39-1": "articles/v39i1p1.html", "39-121": "articles/v39i1p121.html", "39-23": "articles/v39i1p23.html", "39-77": "articles/v39i1p77.html", "39-99": "articles/v39i1p99.html", "39-129": "articles/v39i2p129.html", "39-181": "articles/v39i2p181.html", "39-217": "articles/v39i2p217.html", "39-227": "articles/v39i2p227.html", "39-275": "articles/v39i2p275.html", "39-327": "articles/v39i2p327.html", "39-379": "articles/v39i2p379.html", "3-25": "articles/v3i1p25.html", "3-39": "articles/v3i1p39.html", "3-47": "articles/v3i1p47.html", "3-55": "articles/v3i1p55.html", "3-59": "articles/v3i1p59.html", "40-1": "articles/v40i1p1.html", "40-105": "articles/v40i1p105.html", "40-131": "articles/v40i1p131.html", "40-147": "articles/v40i1p147.html", "40-187": "articles/v40i1p187.html", "40-215": "articles/v40i1p215.html", "40-57": "articles/v40i1p57.html", "40-81": "articles/v40i1p81.html", "41-1": "articles/v41i1p1.html", "41-105": "articles/v41i1p105.html", "41-117": "articles/v41i1p117.html", "41-121": "articles/v41i1p121.html", "41-129": "articles/v41i1p129.html", "41-131": "articles/v41i1p131.html", "41-133": "articles/v41i1p133.html", "41-147": "articles/v41i1p147.html", "41-151": "articles/v41i1p151.html", "41-179": "articles/v41i1p179.html", "41-187": "articles/v41i1p187.html", "41-227": "articles/v41i1p227.html", "41-23": "articles/v41i1p23.html", "41-233": "articles/v41i1p233.html", "41-249": "articles/v41i1p249.html", "41-251": "articles/v41i1p251.html", "41-253": "articles/v41i1p253.html", "41-275": "articles/v41i1p275.html", "41-29": "articles/v41i2p29.html", "41-311": "articles/v41i2p311.html", "41-351": "articles/v41i2p351.html", "41-379": "articles/v41i2p379.html", "41-453": "articles/v41i2p453.html", "41-481": "articles/v41i2p481.html", "41-57": "articles/v41i2p57.html", "41-77": "articles/v41i2p77.html", "41-81": "articles/v41i2p81.html", "41-93": "articles/v41i2p93.html", "41-99": "articles/v41i2p99.html", "42-1": "articles/v42i1p1.html", "42-112": "articles/v42i1p112.html", "42-38": "articles/v42i1p38.html", "42-77": "articles/v42i1p77.html", "46-1": "articles/v46i1p1.html", "46-134": "articles/v46i1p134.html", "46-158": "articles/v46i1p158.html", "46-180": "articles/v46i1p180.html", "46-221": "articles/v46i1p221.html", "46-43": "articles/v46i1p43.html", "46-83": "articles/v46i1p83.html", "46-260": "articles/v46i2p260.html", "46-294": "articles/v46i2p294.html", "46-327": "articles/v46i2p327.html", "46-351": "articles/v46i2p351.html", "46-421": "articles/v46i2p421.html", "46-464": "articles/v46i2p464.html", "47-1": "articles/v47i1p1.html", "47-119": "articles/v47i1p119.html", "47-132": "articles/v47i1p132.html", "47-36": "articles/v47i1p36.html", "47-67": "articles/v47i1p67.html", "47-305": "articles/v47i2p305.html", "47-346": "articles/v47i2p346.html", "47-388": "articles/v47i2p388.html", "47-434": "articles/v47i2p434.html", "47-465": "articles/v47i2p465.html", "47-505": "articles/v47i2p505.html", "47-550": "articles/v47i2p550.html", "4-117": "articles/v4i1p117.html", "4-23": "articles/v4i2p23.html", "4-3": "articles/v4i2p3.html", "4-99": "articles/v4i2p99.html", "5-1": "articles/v5i1p1.html", "5-101": "articles/v5i1p101.html", "5-111": "articles/v5i1p111.html", "5-3": "articles/v5i2p3.html", "5-37": "articles/v5i2p37.html", "5-45": "articles/v5i2p45.html", "5-65": "articles/v5i2p65.html", "5-7": "articles/v5i2p7.html", "5-93": "articles/v5i2p93.html", "6-107": "articles/v6i1p107.html", "6-119": "articles/v6i1p119.html", "6-129": "articles/v6i1p129.html", "6-137": "articles/v6i1p137.html", "6-147": "articles/v6i1p147.html", "6-179": "articles/v6i1p179.html", "6-37": "articles/v6i2p37.html", "6-47": "articles/v6i2p47.html", "7-131": "articles/v7i1p131.html", "7-137": "articles/v7i1p137.html", "7-15": "articles/v7i1p15.html", "7-23": "articles/v7i2p23.html", "7-3": "articles/v7i2p3.html", "7-39": "articles/v7i2p39.html", "8-103": "articles/v8i1p103.html", "8-154": "articles/v8i1p154.html", "8-174": "articles/v8i1p174.html", "8-41": "articles/v8i2p41.html", "8-9": "articles/v8i2p9.html", "9-105": "articles/v9i1p105.html", "9-21": "articles/v9i1p21.html", "9-31": "articles/v9i1p31.html", "9-53": "articles/v9i1p53.html", "9-77": "articles/v9i1p77.html", "9-93": "articles/v9i1p93.html"
         };
 
-        // ── Page navigation ──
+        // ── Page navigation (hash URLs, shareable sections) ──
         const navIds = ['home', 'about', 'journal', 'contact', 'chat'];
+        const VALID_PAGES = ['home', 'about', 'journal', 'contact', 'chat'];
 
-        function showPage(pageId) {
-            document.querySelectorAll('.page-content').forEach(p => p.classList.remove('active'));
-            document.getElementById(pageId).classList.add('active');
+        function getPageFromHash() {
+            let h = (location.hash || '#home').replace(/^#/, '').toLowerCase();
+            if (!h) h = 'home';
+            if (VALID_PAGES.includes(h)) return h;
+            return 'home';
+        }
+
+        function showPage(pageId, opts) {
+            opts = opts || {};
+            if (!VALID_PAGES.includes(pageId)) pageId = 'home';
+            document.querySelectorAll('.page-content').forEach(p => {
+                const on = p.id === pageId;
+                p.classList.toggle('active', on);
+                p.setAttribute('aria-hidden', on ? 'false' : 'true');
+            });
+            if (!opts.skipHash) {
+                const h = '#' + pageId;
+                if (location.hash !== h) history.replaceState(null, '', h);
+            }
             window.scrollTo(0, 0);
             navIds.forEach(id => {
                 const el = document.getElementById('nav-' + id);
                 if (el) el.classList.toggle('active', id === pageId);
             });
+            const panel = document.getElementById('nav-desktop');
+            const btn = document.getElementById('nav-menu-toggle');
+            if (panel && btn) {
+                panel.classList.remove('is-open');
+                btn.setAttribute('aria-expanded', 'false');
+            }
+        }
+
+        function initPageFromHash() {
+            showPage(getPageFromHash(), { skipHash: true });
+        }
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initPageFromHash);
+        } else {
+            initPageFromHash();
+        }
+        window.addEventListener('hashchange', function() {
+            showPage(getPageFromHash(), { skipHash: true });
+        });
+
+        (function () {
+            var btn = document.getElementById('nav-menu-toggle');
+            var panel = document.getElementById('nav-desktop');
+            if (!btn || !panel) return;
+            btn.addEventListener('click', function () {
+                var open = panel.classList.toggle('is-open');
+                btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+            });
+            panel.querySelectorAll('a').forEach(function (a) {
+                a.addEventListener('click', function () {
+                    panel.classList.remove('is-open');
+                    btn.setAttribute('aria-expanded', 'false');
+                });
+            });
+        })();
+
+        var copyBtn = document.getElementById('copy-email-btn');
+        if (copyBtn) {
+            copyBtn.addEventListener('click', function () {
+                var em = 'spacelaw@olemiss.edu';
+                var status = document.getElementById('copy-email-status');
+                function setStatus(t) { if (status) status.textContent = t; }
+                if (navigator.clipboard && navigator.clipboard.writeText) {
+                    navigator.clipboard.writeText(em).then(function () { setStatus('Copied to clipboard.'); }).catch(function () { setStatus(em); });
+                } else {
+                    setStatus(em);
+                }
+            });
         }
 
         // ── Volume collapse/expand ──
-        // Show the 5 most recent volumes expanded; collapse the rest
         const EXPANDED_BY_DEFAULT = 5;
         document.querySelectorAll('.vol-block').forEach((block, idx) => {
             const header = block.querySelector('.vol-block-header');
+            const list = block.querySelector('.art-list');
+            const volId = block.id;
+            const heading = block.querySelector('.vol-heading');
+            const volTitle = heading ? heading.textContent.replace(/\s+/g, ' ').trim() : 'Volume';
+
+            if (list && !list.id) list.id = 'vol-list-' + volId;
+
             const toggleBtn = document.createElement('button');
+            toggleBtn.type = 'button';
             toggleBtn.className = 'vol-toggle';
+            if (list) toggleBtn.setAttribute('aria-controls', list.id);
+
+            function syncVolToggle() {
+                const collapsed = block.classList.contains('collapsed');
+                toggleBtn.setAttribute('aria-expanded', collapsed ? 'false' : 'true');
+                toggleBtn.setAttribute('aria-label', (collapsed ? 'Show articles: ' : 'Hide articles: ') + volTitle);
+            }
+
             header.appendChild(toggleBtn);
+            block._syncVolToggle = syncVolToggle;
 
             if (idx >= EXPANDED_BY_DEFAULT) {
                 block.classList.add('collapsed');
             }
+            syncVolToggle();
 
-            header.addEventListener('click', function(e) {
-                if (e.target.tagName === 'A') return; // let volume link clicks through
+            header.addEventListener('click', function (e) {
+                if (e.target.tagName === 'A') return;
+                if (e.target.closest && e.target.closest('.vol-heading a')) return;
                 block.classList.toggle('collapsed');
+                syncVolToggle();
             });
         });
 
@@ -1526,6 +1698,7 @@
                         block.querySelectorAll('.art-list li').forEach(li => li.style.display = '');
                         if (idx >= EXPANDED_BY_DEFAULT) block.classList.add('collapsed');
                         else block.classList.remove('collapsed');
+                        if (block._syncVolToggle) block._syncVolToggle();
                     });
                 }
             });
