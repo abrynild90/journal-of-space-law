@@ -571,6 +571,67 @@
             text-align: center;
         }
 
+        /* ── COLLAPSIBLE VOLUMES ── */
+        .vol-block-header {
+            cursor: pointer;
+            user-select: none;
+        }
+        .vol-block-header:hover { background: var(--primary-mid); }
+        .vol-toggle {
+            margin-left: auto;
+            font-size: 0.75rem;
+            color: rgba(255,255,255,0.7);
+            background: rgba(255,255,255,0.12);
+            border: none;
+            border-radius: 4px;
+            padding: 0.15rem 0.5rem;
+            cursor: pointer;
+            font-family: inherit;
+            transition: background 0.15s;
+            white-space: nowrap;
+        }
+        .vol-toggle:hover { background: rgba(255,255,255,0.22); }
+        .vol-block.collapsed .art-list { display: none; }
+        .vol-block.collapsed .vol-toggle::after { content: 'Show ▾'; }
+        .vol-block:not(.collapsed) .vol-toggle::after { content: 'Hide ▴'; }
+
+        /* ── ARTICLE LIST IMPROVEMENTS ── */
+        .art-title a {
+            color: inherit;
+            text-decoration: none;
+        }
+        .art-title a:hover {
+            color: var(--secondary);
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+        .art-separator {
+            color: var(--border-dk);
+            font-size: 0.8rem;
+        }
+        .art-unavailable {
+            color: var(--gray-lt);
+            font-style: italic;
+        }
+
+        /* ── FOOTER LINKS ── */
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            padding: 0.75rem 2rem 0;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            margin-top: 0.75rem;
+        }
+        .footer-links a {
+            color: rgba(255,255,255,0.55);
+            text-decoration: none;
+            font-size: 0.82rem;
+            transition: color 0.15s;
+        }
+        .footer-links a:hover { color: white; }
+
         /* ── RESPONSIVE ── */
         @media (max-width: 900px) {
             .about-content { grid-template-columns: 1fr; }
@@ -600,11 +661,11 @@
 </div>
 </div>
 <nav>
-<a class="active" href="#" id="nav-home" onclick="showPage('home')">Home</a>
-<a href="#" id="nav-about" onclick="showPage('about')">About</a>
-<a href="#" id="nav-journal" onclick="showPage('journal')">Journal</a>
-<a href="#" id="nav-contact" onclick="showPage('contact')">Contact</a>
-<a class="nav-chat-link" href="#" id="nav-chat" onclick="showPage('chat')">💬 Chat</a>
+<a class="active" href="javascript:void(0)" id="nav-home" onclick="showPage('home'); return false;">Home</a>
+<a href="javascript:void(0)" id="nav-about" onclick="showPage('about'); return false;">About</a>
+<a href="javascript:void(0)" id="nav-journal" onclick="showPage('journal'); return false;">Journal</a>
+<a href="javascript:void(0)" id="nav-contact" onclick="showPage('contact'); return false;">Contact</a>
+<a class="nav-chat-link" href="javascript:void(0)" id="nav-chat" onclick="showPage('chat'); return false;">Chat</a>
 <a class="nav-external" href="https://olemiss.edu/airandspacelaw/" target="_blank">Center ↗</a>
 </nav>
 </div>
@@ -617,8 +678,8 @@
 <h1>Journal of Space Law</h1>
 <p>The oldest publication dedicated to legal issues in outer space. Published by the University of Mississippi's Center for Air and Space Law, covering international treaties, commercial space activities, and emerging legal challenges in space exploration.</p>
 <div class="hero-actions">
-<a class="btn" href="#" onclick="showPage('journal')">Browse Journal Issues</a>
-<a class="btn btn-outline" href="#" onclick="showPage('about')">Learn More</a>
+<a class="btn" href="javascript:void(0)" onclick="showPage('journal'); return false;">Browse Journal Issues</a>
+<a class="btn btn-outline" href="javascript:void(0)" onclick="showPage('about'); return false;">Learn More</a>
 </div>
 </div>
 </section>
@@ -626,11 +687,10 @@
 <section class="section">
 <div class="about-content">
 <div class="about-text">
-<h2 class="section-title">Cutting-Edge Legal Research on Outer Space Since 1973</h2>
-<p>The Center for Air and Space Law and the University of Mississippi School of Law have been at the forefront of space law since the 1970s.</p>
-<p>We're proud to publish the Journal of Space Law, our Center's flagship publication and a world-renowned journal on outer space.</p>
-<p>Founded by Professor Stephen Gorove, our Journal has featured articles from pioneers in space law including: Eilene Galloway, Myres McDougal, Bin Cheng, Francis Lyall, and countless others.</p>
-<p>Today, under the leadership of the Center's Executive Director and Professor Michelle Hanlon, we continue to provide cutting-edge research on space law for the international community.</p>
+<h2 class="section-title">The World's Oldest Space Law Journal</h2>
+<p>Founded in 1973 by Professor Stephen Gorove, the <em>Journal of Space Law</em> is the oldest and most respected scholarly publication dedicated exclusively to legal issues in outer space.</p>
+<p>Published by the University of Mississippi's Center for Air and Space Law, the Journal covers international treaties, commercial space activities, national space legislation, and the emerging legal challenges of the new space age.</p>
+<p>Today, under the leadership of Executive Director and Professor Michelle Hanlon, the Journal continues to serve as the premier forum for space law scholarship. <a href="javascript:void(0)" onclick="showPage('about'); return false;" style="color:var(--secondary);">Learn more →</a></p>
 </div>
 <div class="about-stats">
 <div class="stat-card">
@@ -719,7 +779,7 @@
 
 
 
-<li><span class="art-title">Protecting Intellectual Property in Outer Space Challenges and Solutions</span><span class="art-author">Clark W. Lackert, Caleb Dorris</span><span class="art-pages">p. 550-612</span></li><li><span class="art-title">The Space-Defense Relationship in International Organizations: Peaceful Cooperation or Increasing Competitiveness</span><span class="art-author">Giulia Pascuzzi</span><span class="art-pages">p. 505-549</span></li><li><span class="art-title">Uncontrolled Reentry A Comparison of the Chinese and US Legal and Policy Approaches</span><span class="art-author">Jessica Sewell</span><span class="art-pages">p. 465-504</span></li><li><span class="art-title">Addressing the US Domain Awareness Gap Posed by Unidentified Anomalous Phenomena</span><span class="art-author">Quinn McKemey</span><span class="art-pages">p. 434-464</span></li><li><span class="art-title">Back to the Future of Biopower</span><span class="art-author">Gbenga Oduntan</span><span class="art-pages">p. 388-433</span></li><li><span class="art-title">Is the Speed of Law Faster than the Speed of Light? Considerations of the Impact of Special Relativity on the Operation of Law in the Context of Deep Space Missions</span><span class="art-author">Alex Simmonds</span><span class="art-pages">p. 346-387</span></li><li><span class="art-title">Protecting the Cosmos The Need to Define Celestial Bodies in the Outer Space Treaty</span><span class="art-author">David A. Epstein</span><span class="art-pages">p. 305-345</span></li><li><span class="art-title">The Plight of Valinor: A Historically Informed Perspective on the Future Development of Space Law and Governance</span><span class="art-author">Marshall McKellar</span><span class="art-pages">p. 132-304</span></li><li><span class="art-title">Lost (It All) in Space The Legality of Extra-Terrestrial Gambling</span><span class="art-author">Robert M. Jarvis</span><span class="art-pages">p. 119-131</span></li><li><span class="art-title">Legal Issues for Lunar Orbiting Satellites</span><span class="art-author">Francesca Giannoni-Crystal</span><span class="art-pages">p. 67-118</span></li><li><span class="art-title">Directed Energy Weapons and Why States’ Interpretations of “Armed Attack” and “Armed Conflict” Should Evolve</span><span class="art-author">Andy Moore</span><span class="art-pages">p. 36-66</span></li><li><span class="art-title">On Increasing Commercial Space Operations and Global Integrated Airspace Safety Governance</span><span class="art-author">Nilgun Ozgur, Steven Truxal</span><span class="art-pages">p. 1-35</span></li></ul>
+<li><span class="art-title">Protecting Intellectual Property in Outer Space Challenges and Solutions</span><span class="art-author">Clark W. Lackert, Caleb Dorris</span><span class="art-pages">p. 550-612</span></li><li><span class="art-title">The Space-Defense Relationship in International Organizations: Peaceful Cooperation or Increasing Competitiveness</span><span class="art-author">Giulia Pascuzzi</span><span class="art-pages">p. 505-549</span></li><li><span class="art-title">Uncontrolled Reentry: A Comparison of the Chinese and US Legal and Policy Approaches</span><span class="art-author">Jessica Sewell</span><span class="art-pages">p. 465-504</span></li><li><span class="art-title">Addressing the U.S. Domain Awareness Gap Posed by Unidentified Anomalous Phenomena</span><span class="art-author">Quinn McKemey</span><span class="art-pages">p. 434-464</span></li><li><span class="art-title">Back to the Future of Biopower</span><span class="art-author">Gbenga Oduntan</span><span class="art-pages">p. 388-433</span></li><li><span class="art-title">Is the Speed of Law Faster than the Speed of Light? Considerations of the Impact of Special Relativity on the Operation of Law in the Context of Deep Space Missions</span><span class="art-author">Alex Simmonds</span><span class="art-pages">p. 346-387</span></li><li><span class="art-title">Protecting the Cosmos: The Need to Define Celestial Bodies in the Outer Space Treaty</span><span class="art-author">David A. Epstein</span><span class="art-pages">p. 305-345</span></li><li><span class="art-title">The Plight of Valinor: A Historically Informed Perspective on the Future Development of Space Law and Governance</span><span class="art-author">Marshall McKellar</span><span class="art-pages">p. 132-304</span></li><li><span class="art-title">Lost (It All) in Space: The Legality of Extra-Terrestrial Gambling</span><span class="art-author">Robert M. Jarvis</span><span class="art-pages">p. 119-131</span></li><li><span class="art-title">Legal Issues for Lunar Orbiting Satellites</span><span class="art-author">Francesca Giannoni-Crystal</span><span class="art-pages">p. 67-118</span></li><li><span class="art-title">Directed Energy Weapons and Why States’ Interpretations of “Armed Attack” and “Armed Conflict” Should Evolve</span><span class="art-author">Andy Moore</span><span class="art-pages">p. 36-66</span></li><li><span class="art-title">On Increasing Commercial Space Operations and Global Integrated Airspace Safety Governance</span><span class="art-author">Nilgun Ozgur, Steven Truxal</span><span class="art-pages">p. 1-35</span></li></ul>
 </div>
 <div class="vol-block" id="v46">
 <div class="vol-block-header"><h3 class="vol-heading"><a href="volumes/v46-2022.html" style="color: inherit; text-decoration: none;">Volume 46 (2022)</a></h3><span class="vol-count">13 articles</span></div>
@@ -1206,7 +1266,7 @@
 
 
 
-<li><span class="art-title">Significant Developments in SPace Law A Projection for the Next Decade</span><span class="art-author">Doyle, Stephen E.</span><span class="art-pages">p. 105</span></li><li><span class="art-title">Some Reflections on the State of the Law of Outer Space</span><span class="art-author">DeSaussure, Hamilton</span><span class="art-pages">p. 93</span></li><li><span class="art-title">Treaty The Search for a Position</span><span class="art-author">Christol, Carl Q.</span><span class="art-pages">p. 77</span></li><li><span class="art-title">Commercial Participation in Space Activities</span><span class="art-author">Menter, Martin</span><span class="art-pages">p. 53</span></li><li><span class="art-title">of Interrelations</span><span class="art-author">Vereschetin, V. S.</span><span class="art-pages">p. 31</span></li><li><span class="art-title">Perspecltves ofS Pace Law</span><span class="art-author">Galloway, Eilene</span><span class="art-pages">p. 21</span></li></ul>
+<li><span class="art-title">Significant Developments in Space Law: A Projection for the Next Decade</span><span class="art-author">Doyle, Stephen E.</span><span class="art-pages">p. 105</span></li><li><span class="art-title">Some Reflections on the State of the Law of Outer Space</span><span class="art-author">DeSaussure, Hamilton</span><span class="art-pages">p. 93</span></li><li><span class="art-title">Treaty The Search for a Position</span><span class="art-author">Christol, Carl Q.</span><span class="art-pages">p. 77</span></li><li><span class="art-title">Commercial Participation in Space Activities</span><span class="art-author">Menter, Martin</span><span class="art-pages">p. 53</span></li><li><span class="art-title">of Interrelations</span><span class="art-author">Vereschetin, V. S.</span><span class="art-pages">p. 31</span></li><li><span class="art-title">Perspectives of Space Law</span><span class="art-author">Galloway, Eilene</span><span class="art-pages">p. 21</span></li></ul>
 </div>
 <div class="vol-block" id="v8">
 <div class="vol-block-header"><h3 class="vol-heading"><a href="volumes/v8-1980.html" style="color: inherit; text-decoration: none;">Volume 8</a></h3><span class="vol-count">5 articles</span></div>
@@ -1227,7 +1287,7 @@
 
 
 
-<li><span class="art-title">Where Air Space Ends and Outer Space Begins</span><span class="art-author">Rosenfield, Stanley B.</span><span class="art-pages">p. 137</span></li><li><span class="art-title">The Second United Nations Conference on Outer Space-An Opportunity for the Future</span><span class="art-author">Robinson, Marvin W.</span><span class="art-pages">p. 131</span></li><li><span class="art-title">Space Law as It Affects Domestic Law</span><span class="art-author">Diederiks-Verschoor, I. H. Ph.</span><span class="art-pages">p. 39</span></li><li><span class="art-title">Some Problems Of State Responsibility In Outer Space Law</span><span class="art-author">Wiewiorowska, Krystyna</span><span class="art-pages">p. 23</span></li><li><span class="art-title">The Strategy of Semantics And The Mankind Provisions OfT he Space Treaty</span><span class="art-author">Bueckling, Adrian</span><span class="art-pages">p. 15</span></li><li><span class="art-title">Consensus Decisionmaking By The United Nations Committee On The Peaceful Uses OfO uter Space</span><span class="art-author">Galloway, Eilene</span><span class="art-pages">p. 3</span></li></ul>
+<li><span class="art-title">Where Air Space Ends and Outer Space Begins</span><span class="art-author">Rosenfield, Stanley B.</span><span class="art-pages">p. 137</span></li><li><span class="art-title">The Second United Nations Conference on Outer Space-An Opportunity for the Future</span><span class="art-author">Robinson, Marvin W.</span><span class="art-pages">p. 131</span></li><li><span class="art-title">Space Law as It Affects Domestic Law</span><span class="art-author">Diederiks-Verschoor, I. H. Ph.</span><span class="art-pages">p. 39</span></li><li><span class="art-title">Some Problems Of State Responsibility In Outer Space Law</span><span class="art-author">Wiewiorowska, Krystyna</span><span class="art-pages">p. 23</span></li><li><span class="art-title">The Strategy of Semantics and the Mankind Provisions of the Space Treaty</span><span class="art-author">Bueckling, Adrian</span><span class="art-pages">p. 15</span></li><li><span class="art-title">Consensus Decisionmaking By the United Nations Committee on the Peaceful Uses of Outer Space</span><span class="art-author">Galloway, Eilene</span><span class="art-pages">p. 3</span></li></ul>
 </div>
 <div class="vol-block" id="v6">
 <div class="vol-block-header"><h3 class="vol-heading"><a href="volumes/v6-1978.html" style="color: inherit; text-decoration: none;">Volume 6</a></h3><span class="vol-count">7 articles</span></div>
@@ -1303,7 +1363,7 @@
 <h2 class="section-title">Contact Us</h2>
 <p style="margin-bottom: 2rem;">If you have questions about the Journal of Space Law or want to get involved, please contact us using the form below:</p>
 <div class="contact-form">
-<form>
+<form id="contact-form" onsubmit="handleContactSubmit(event)">
 <div class="form-group">
 <label for="name">Name</label>
 <input id="name" name="name" required="" type="text"/>
@@ -1320,8 +1380,10 @@
 <label for="message">Message</label>
 <textarea id="message" name="message" required=""></textarea>
 </div>
-<button class="btn" type="submit">Send Message</button>
+<button class="btn-submit" type="submit">Send Message</button>
+<p id="form-status" style="margin-top:1rem; font-size:0.88rem; color:var(--gray); display:none;"></p>
 </form>
+<p style="margin-top:1.25rem; font-size:0.85rem; color:var(--gray);">You may also reach us directly at <a href="mailto:spacelaw@olemiss.edu" style="color:var(--secondary);">spacelaw@olemiss.edu</a>.</p>
 </div>
 </section>
 </main>
@@ -1344,6 +1406,14 @@
 <div class="footer-main">
 <p>© 2026 Journal of Space Law. All rights reserved.</p>
 <p>ISSN 0095-7577 · University of Mississippi School of Law</p>
+<nav class="footer-links">
+<a href="javascript:void(0)" onclick="showPage('home'); return false;">Home</a>
+<a href="javascript:void(0)" onclick="showPage('about'); return false;">About</a>
+<a href="javascript:void(0)" onclick="showPage('journal'); return false;">Journal Archive</a>
+<a href="javascript:void(0)" onclick="showPage('contact'); return false;">Contact</a>
+<a href="javascript:void(0)" onclick="showPage('chat'); return false;">Chat</a>
+<a href="https://olemiss.edu/airandspacelaw/" target="_blank">Center for Air &amp; Space Law ↗</a>
+</nav>
 </div>
 <div class="footer-publisher">
 <span>Published by</span>
@@ -1353,22 +1423,10 @@
 </div>
 </footer>
 <script>
-        // ── Archive search ──
-        const archiveSearch = document.getElementById('archive-search');
-        if (archiveSearch) {
-            archiveSearch.addEventListener('input', function() {
-                const q = this.value.toLowerCase();
-                document.querySelectorAll('.vol-block').forEach(block => {
-                    let anyMatch = false;
-                    block.querySelectorAll('.art-list li').forEach(li => {
-                        const match = !q || li.textContent.toLowerCase().includes(q);
-                        li.style.display = match ? '' : 'none';
-                        if (match) anyMatch = true;
-                    });
-                    block.style.display = (!q || anyMatch) ? '' : 'none';
-                });
-            });
-        }
+        // ── Article file lookup: "volNum-startPage" -> relative path ──
+        const articleFiles = {
+        "10-1": "articles/v10i1p1.html", "10-107": "articles/v10i1p107.html", "10-13": "articles/v10i1p13.html", "10-139": "articles/v10i1p139.html", "10-165": "articles/v10i2p165.html", "10-31": "articles/v10i2p31.html", "11-107": "articles/v11i1p107.html", "11-115": "articles/v11i1p115.html", "11-15": "articles/v11i1p15.html", "11-21": "articles/v11i2p21.html", "11-27": "articles/v11i2p27.html", "11-35": "articles/v11i2p35.html", "11-61": "articles/v11i2p61.html", "11-67": "articles/v11i2p67.html", "11-73": "articles/v11i2p73.html", "11-83": "articles/v11i2p83.html", "11-89": "articles/v11i2p89.html", "12-1": "articles/v12i1p1.html", "12-109": "articles/v12i1p109.html", "12-12": "articles/v12i1p12.html", "12-163": "articles/v12i1p163.html", "12-26": "articles/v12i2p26.html", "12-40": "articles/v12i2p40.html", "13-1": "articles/v13i1p1.html", "13-103": "articles/v13i1p103.html", "13-157": "articles/v13i1p157.html", "13-8": "articles/v13i2p8.html", "14-1": "articles/v14i1p1.html", "14-113": "articles/v14i1p113.html", "14-140": "articles/v14i1p140.html", "14-95": "articles/v14i1p95.html", "15-101": "articles/v15i1p101.html", "15-147": "articles/v15i1p147.html", "15-25": "articles/v15i1p25.html", "15-35": "articles/v15i1p35.html", "16-1": "articles/v16i1p1.html", "16-117": "articles/v16i1p117.html", "16-147": "articles/v16i1p147.html", "16-21": "articles/v16i2p21.html", "16-5": "articles/v16i2p5.html", "17-103": "articles/v17i1p103.html", "17-115": "articles/v17i1p115.html", "17-129": "articles/v17i1p129.html", "17-13": "articles/v17i1p13.html", "17-23": "articles/v17i2p23.html", "18-1": "articles/v18i1p1.html", "18-113": "articles/v18i1p113.html", "18-123": "articles/v18i1p123.html", "18-19": "articles/v18i1p19.html", "18-99": "articles/v18i1p99.html", "19-1": "articles/v19i1p1.html", "19-103": "articles/v19i1p103.html", "19-123": "articles/v19i1p123.html", "1-105": "articles/v1i1p105.html", "1-113": "articles/v1i1p113.html", "1-139": "articles/v1i1p139.html", "1-201": "articles/v1i2p201.html", "1-64": "articles/v1i2p64.html", "1-72": "articles/v1i2p72.html", "1-80": "articles/v1i2p80.html", "20-111": "articles/v20i1p111.html", "20-117": "articles/v20i1p117.html", "20-27": "articles/v20i1p27.html", "21-1": "articles/v21i1p1.html", "21-11": "articles/v21i1p11.html", "21-123": "articles/v21i1p123.html", "21-97": "articles/v21i1p97.html", "22-33": "articles/v22i1p33.html", "22-57": "articles/v22i1p57.html", "22-75": "articles/v22i1p75.html", "22-97": "articles/v22i1p97.html", "23-121": "articles/v23i1p121.html", "23-123": "articles/v23i1p123.html", "24-1": "articles/v24i1p1.html", "24-97": "articles/v24i1p97.html", "25-1": "articles/v25i1p1.html", "25-17": "articles/v25i1p17.html", "25-93": "articles/v25i1p93.html", "26-111": "articles/v26i1p111.html", "26-139": "articles/v26i1p139.html", "26-187": "articles/v26i1p187.html", "26-51": "articles/v26i2p51.html", "26-99": "articles/v26i2p99.html", "27-99": "articles/v27i1p99.html", "28-101": "articles/v28i1p101.html", "28-11": "articles/v28i1p11.html", "29-1": "articles/v29i1p1.html", "29-121": "articles/v29i1p121.html", "29-185": "articles/v29i1p185.html", "29-21": "articles/v29i1p21.html", "29-31": "articles/v29i1p31.html", "29-65": "articles/v29i1p65.html", "2-1": "articles/v2i1p1.html", "2-107": "articles/v2i1p107.html", "2-19": "articles/v2i1p19.html", "2-27": "articles/v2i1p27.html", "2-83": "articles/v2i1p83.html", "30-1": "articles/v30i1p1.html", "30-129": "articles/v30i1p129.html", "30-13": "articles/v30i1p13.html", "30-169": "articles/v30i1p169.html", "30-203": "articles/v30i1p203.html", "30-227": "articles/v30i1p227.html", "30-234": "articles/v30i1p234.html", "30-241": "articles/v30i1p241.html", "30-251": "articles/v30i1p251.html", "30-277": "articles/v30i2p277.html", "30-297": "articles/v30i2p297.html", "30-311": "articles/v30i2p311.html", "31-1": "articles/v31i1p1.html", "31-117": "articles/v31i1p117.html", "31-165": "articles/v31i1p165.html", "31-219": "articles/v31i1p219.html", "31-243": "articles/v31i1p243.html", "31-287": "articles/v31i1p287.html", "31-339": "articles/v31i1p339.html", "31-423": "articles/v31i1p423.html", "31-447": "articles/v31i1p447.html", "31-467": "articles/v31i1p467.html", "32-1": "articles/v32i1p1.html", "32-111": "articles/v32i1p111.html", "32-147": "articles/v32i1p147.html", "32-177": "articles/v32i1p177.html", "32-203": "articles/v32i1p203.html", "32-217": "articles/v32i1p217.html", "32-253": "articles/v32i1p253.html", "32-293": "articles/v32i1p293.html", "32-319": "articles/v32i2p319.html", "32-361": "articles/v32i2p361.html", "33-1": "articles/v33i1p1.html", "33-123": "articles/v33i1p123.html", "33-195": "articles/v33i1p195.html", "33-221": "articles/v33i1p221.html", "33-245": "articles/v33i2p245.html", "33-299": "articles/v33i2p299.html", "33-341": "articles/v33i2p341.html", "33-359": "articles/v33i2p359.html", "33-405": "articles/v33i2p405.html", "33-437": "articles/v33i2p437.html", "33-459": "articles/v33i2p459.html", "34-11": "articles/v34i1p11.html", "34-163": "articles/v34i1p163.html", "34-19": "articles/v34i1p19.html", "34-203": "articles/v34i1p203.html", "34-221": "articles/v34i1p221.html", "34-241": "articles/v34i1p241.html", "34-33": "articles/v34i1p33.html", "34-357": "articles/v34i1p357.html", "34-411": "articles/v34i2p411.html", "34-435": "articles/v34i2p435.html", "34-45": "articles/v34i2p45.html", "34-471": "articles/v34i2p471.html", "34-487": "articles/v34i2p487.html", "34-497": "articles/v34i2p497.html", "34-67": "articles/v34i2p67.html", "34-97": "articles/v34i2p97.html", "35-1": "articles/v35i1p1.html", "35-201": "articles/v35i1p201.html", "35-291": "articles/v35i1p291.html", "35-313": "articles/v35i1p313.html", "35-37": "articles/v35i1p37.html", "35-471": "articles/v35i1p471.html", "35-5": "articles/v35i1p5.html", "35-539": "articles/v35i1p539.html", "35-559": "articles/v35i1p559.html", "35-615": "articles/v35i1p615.html", "35-75": "articles/v35i1p75.html", "36-1": "articles/v36i1p1.html", "36-115": "articles/v36i1p115.html", "36-143": "articles/v36i1p143.html", "36-207": "articles/v36i1p207.html", "36-335": "articles/v36i1p335.html", "36-365": "articles/v36i1p365.html", "36-381": "articles/v36i1p381.html", "36-415": "articles/v36i1p415.html", "36-435": "articles/v36i1p435.html", "36-459": "articles/v36i2p459.html", "36-489": "articles/v36i2p489.html", "36-525": "articles/v36i2p525.html", "36-55": "articles/v36i2p55.html", "36-567": "articles/v36i2p567.html", "36-579": "articles/v36i2p579.html", "36-87": "articles/v36i2p87.html", "37-1": "articles/v37i1p1.html", "37-277": "articles/v37i1p277.html", "37-279": "articles/v37i1p279.html", "37-299": "articles/v37i1p299.html", "38-1": "articles/v38i1p1.html", "38-151": "articles/v38i1p151.html", "38-171": "articles/v38i1p171.html", "38-227": "articles/v38i1p227.html", "38-289": "articles/v38i1p289.html", "38-39": "articles/v38i1p39.html", "39-1": "articles/v39i1p1.html", "39-121": "articles/v39i1p121.html", "39-23": "articles/v39i1p23.html", "39-77": "articles/v39i1p77.html", "39-99": "articles/v39i1p99.html", "39-129": "articles/v39i2p129.html", "39-181": "articles/v39i2p181.html", "39-217": "articles/v39i2p217.html", "39-227": "articles/v39i2p227.html", "39-275": "articles/v39i2p275.html", "39-327": "articles/v39i2p327.html", "39-379": "articles/v39i2p379.html", "3-25": "articles/v3i1p25.html", "3-39": "articles/v3i1p39.html", "3-47": "articles/v3i1p47.html", "3-55": "articles/v3i1p55.html", "3-59": "articles/v3i1p59.html", "40-1": "articles/v40i1p1.html", "40-105": "articles/v40i1p105.html", "40-131": "articles/v40i1p131.html", "40-147": "articles/v40i1p147.html", "40-187": "articles/v40i1p187.html", "40-215": "articles/v40i1p215.html", "40-57": "articles/v40i1p57.html", "40-81": "articles/v40i1p81.html", "41-1": "articles/v41i1p1.html", "41-105": "articles/v41i1p105.html", "41-117": "articles/v41i1p117.html", "41-121": "articles/v41i1p121.html", "41-129": "articles/v41i1p129.html", "41-131": "articles/v41i1p131.html", "41-133": "articles/v41i1p133.html", "41-147": "articles/v41i1p147.html", "41-151": "articles/v41i1p151.html", "41-179": "articles/v41i1p179.html", "41-187": "articles/v41i1p187.html", "41-227": "articles/v41i1p227.html", "41-23": "articles/v41i1p23.html", "41-233": "articles/v41i1p233.html", "41-249": "articles/v41i1p249.html", "41-251": "articles/v41i1p251.html", "41-253": "articles/v41i1p253.html", "41-275": "articles/v41i1p275.html", "41-29": "articles/v41i2p29.html", "41-311": "articles/v41i2p311.html", "41-351": "articles/v41i2p351.html", "41-379": "articles/v41i2p379.html", "41-453": "articles/v41i2p453.html", "41-481": "articles/v41i2p481.html", "41-57": "articles/v41i2p57.html", "41-77": "articles/v41i2p77.html", "41-81": "articles/v41i2p81.html", "41-93": "articles/v41i2p93.html", "41-99": "articles/v41i2p99.html", "42-1": "articles/v42i1p1.html", "42-112": "articles/v42i1p112.html", "42-38": "articles/v42i1p38.html", "42-77": "articles/v42i1p77.html", "46-1": "articles/v46i1p1.html", "46-134": "articles/v46i1p134.html", "46-158": "articles/v46i1p158.html", "46-180": "articles/v46i1p180.html", "46-221": "articles/v46i1p221.html", "46-43": "articles/v46i1p43.html", "46-83": "articles/v46i1p83.html", "46-260": "articles/v46i2p260.html", "46-294": "articles/v46i2p294.html", "46-327": "articles/v46i2p327.html", "46-351": "articles/v46i2p351.html", "46-421": "articles/v46i2p421.html", "46-464": "articles/v46i2p464.html", "47-1": "articles/v47i1p1.html", "47-119": "articles/v47i1p119.html", "47-132": "articles/v47i1p132.html", "47-36": "articles/v47i1p36.html", "47-67": "articles/v47i1p67.html", "47-305": "articles/v47i2p305.html", "47-346": "articles/v47i2p346.html", "47-388": "articles/v47i2p388.html", "47-434": "articles/v47i2p434.html", "47-465": "articles/v47i2p465.html", "47-505": "articles/v47i2p505.html", "47-550": "articles/v47i2p550.html", "4-117": "articles/v4i1p117.html", "4-23": "articles/v4i2p23.html", "4-3": "articles/v4i2p3.html", "4-99": "articles/v4i2p99.html", "5-1": "articles/v5i1p1.html", "5-101": "articles/v5i1p101.html", "5-111": "articles/v5i1p111.html", "5-3": "articles/v5i2p3.html", "5-37": "articles/v5i2p37.html", "5-45": "articles/v5i2p45.html", "5-65": "articles/v5i2p65.html", "5-7": "articles/v5i2p7.html", "5-93": "articles/v5i2p93.html", "6-107": "articles/v6i1p107.html", "6-119": "articles/v6i1p119.html", "6-129": "articles/v6i1p129.html", "6-137": "articles/v6i1p137.html", "6-147": "articles/v6i1p147.html", "6-179": "articles/v6i1p179.html", "6-37": "articles/v6i2p37.html", "6-47": "articles/v6i2p47.html", "7-131": "articles/v7i1p131.html", "7-137": "articles/v7i1p137.html", "7-15": "articles/v7i1p15.html", "7-23": "articles/v7i2p23.html", "7-3": "articles/v7i2p3.html", "7-39": "articles/v7i2p39.html", "8-103": "articles/v8i1p103.html", "8-154": "articles/v8i1p154.html", "8-174": "articles/v8i1p174.html", "8-41": "articles/v8i2p41.html", "8-9": "articles/v8i2p9.html", "9-105": "articles/v9i1p105.html", "9-21": "articles/v9i1p21.html", "9-31": "articles/v9i1p31.html", "9-53": "articles/v9i1p53.html", "9-77": "articles/v9i1p77.html", "9-93": "articles/v9i1p93.html"
+        };
 
         // ── Page navigation ──
         const navIds = ['home', 'about', 'journal', 'contact', 'chat'];
@@ -1383,6 +1441,113 @@
             });
         }
 
+        // ── Volume collapse/expand ──
+        // Show the 5 most recent volumes expanded; collapse the rest
+        const EXPANDED_BY_DEFAULT = 5;
+        document.querySelectorAll('.vol-block').forEach((block, idx) => {
+            const header = block.querySelector('.vol-block-header');
+            const toggleBtn = document.createElement('button');
+            toggleBtn.className = 'vol-toggle';
+            header.appendChild(toggleBtn);
+
+            if (idx >= EXPANDED_BY_DEFAULT) {
+                block.classList.add('collapsed');
+            }
+
+            header.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') return; // let volume link clicks through
+                block.classList.toggle('collapsed');
+            });
+        });
+
+        // ── Article title linking ──
+        document.querySelectorAll('.vol-block').forEach(block => {
+            const volId = block.id; // e.g. "v47"
+            const volNum = volId.replace('v', '');
+            block.querySelectorAll('.art-list li').forEach(li => {
+                const titleSpan = li.querySelector('.art-title');
+                const pagesSpan = li.querySelector('.art-pages');
+                if (!titleSpan || !pagesSpan) return;
+
+                // Skip unavailable titles
+                if (titleSpan.textContent.includes('[Title unavailable')) {
+                    titleSpan.classList.add('art-unavailable');
+                    return;
+                }
+
+                // Extract start page from "p. 550-612" or "p. 464"
+                const pageText = pagesSpan.textContent.replace('p. ', '').trim();
+                const startPage = pageText.split('-')[0].trim();
+                const key = volNum + '-' + startPage;
+
+                if (articleFiles[key]) {
+                    const link = document.createElement('a');
+                    link.href = articleFiles[key];
+                    link.textContent = titleSpan.textContent;
+                    link.title = 'Read article';
+                    titleSpan.textContent = '';
+                    titleSpan.appendChild(link);
+                }
+
+                // Add separator between title and author
+                const authorSpan = li.querySelector('.art-author');
+                if (authorSpan) {
+                    const sep = document.createElement('span');
+                    sep.className = 'art-separator';
+                    sep.textContent = '·';
+                    li.insertBefore(sep, authorSpan);
+                }
+            });
+        });
+
+        // ── Archive search ──
+        const archiveSearch = document.getElementById('archive-search');
+        if (archiveSearch) {
+            archiveSearch.addEventListener('input', function() {
+                const q = this.value.toLowerCase();
+                document.querySelectorAll('.vol-block').forEach(block => {
+                    let anyMatch = false;
+                    block.querySelectorAll('.art-list li').forEach(li => {
+                        const match = !q || li.textContent.toLowerCase().includes(q);
+                        li.style.display = match ? '' : 'none';
+                        if (match) anyMatch = true;
+                    });
+                    if (!q) {
+                        block.style.display = '';
+                        // restore default collapsed state (collapse older volumes)
+                    } else {
+                        block.style.display = anyMatch ? '' : 'none';
+                        if (anyMatch) block.classList.remove('collapsed'); // expand on match
+                    }
+                });
+                // On clear, re-collapse older volumes
+                if (!q) {
+                    document.querySelectorAll('.vol-block').forEach((block, idx) => {
+                        block.querySelectorAll('.art-list li').forEach(li => li.style.display = '');
+                        if (idx >= EXPANDED_BY_DEFAULT) block.classList.add('collapsed');
+                        else block.classList.remove('collapsed');
+                    });
+                }
+            });
+        }
+
+        // ── Contact form handler ──
+        function handleContactSubmit(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const subject = document.getElementById('subject').value.trim();
+            const message = document.getElementById('message').value.trim();
+            const status = document.getElementById('form-status');
+
+            // Open a pre-filled mailto link
+            const body = encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\n\n' + message);
+            const mailtoUrl = 'mailto:spacelaw@olemiss.edu?subject=' + encodeURIComponent(subject) + '&body=' + body;
+            window.location.href = mailtoUrl;
+
+            status.style.display = 'block';
+            status.textContent = 'Your email client should open with a pre-filled message. If it does not, please email spacelaw@olemiss.edu directly.';
+        }
     </script>
 </body>
 </html>
